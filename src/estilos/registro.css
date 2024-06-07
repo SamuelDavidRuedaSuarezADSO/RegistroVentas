@@ -1,0 +1,87 @@
+/* Globales  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --bgd--blanco: #fff;
+  --bgd--negro: #000;
+  --bgd--azul--principal: #2196f3;
+  --bgd--azul--boton: #37a0f4;
+  --bgd--rey--boton: #1d5a8a;
+  --color--azul--principal: #2196f3;
+  --color--negro: #000;
+  --color--blanco: #fff;
+  --color--azul--oscuro: #023761;
+  --color--red: red;
+  --color--azul--link: #336a95;
+  --border--azul--oscuro: #023761;
+  --border--azul--pricipal: #2196f3;
+  --letra--tamaño--pequeña: 17px;
+  --letra--tamaño--mediana: 20px;
+  --letra--tamaño--grande: 45px;
+}
+
+.box {
+  max-width: 1204px;
+  margin: 0 auto;
+}
+
+body {
+  background-image: url(../../assets/Imagenes/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: 165vh;
+  background-position: center;
+}
+
+input {
+  padding-left: 12px;
+  border: none;
+  border-bottom: 4px solid var(--border--azul--oscuro);
+  font-size: var(--letra--tamaño--mediana);
+  width: 420px;
+  height: 45px;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  border: 4px solid var(--border--azul--oscuro);
+  border-radius: 8px;
+}
+
+.boton {
+  width: 280px;
+  height: 40px;
+  font-size: var(--letra--tamaño--pequeña);
+  border-radius: 100px;
+  color: var(--color--blanco);
+  font-weight: 600;
+  border: none;
+}
+
+/* Header */
+header {
+}
+
+.header__logo {
+  height: 80px;
+  margin-left: 250px;
+  margin-top: 30px;
+}
+
+/* register */
+main {
+}
+
+.register {
+}
+
+.register__title {
+}
+
+.register__form {
+}

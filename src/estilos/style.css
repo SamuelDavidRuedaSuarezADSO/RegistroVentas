@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+:root {
+  --bgd--blanco: #fff;
+  --bgd--negro: #000;
+  --bgd--azul--principal: #2196f3;
+  --bgd--azul--boton: #37a0f4;
+  --bgd--rey--boton: #1d5a8a;
+  --color--azul--principal: #2196f3;
+  --color--negro: #000;
+  --color--blanco: #fff;
+  --color--azul--oscuro: #023761;
+  --color--red: red;
+  --color--azul--link: #336a95;
+  --border--azul--oscuro: #023761;
+  --border--azul--pricipal: #2196f3;
+  --letra--tamaño--pequeña: 17px;
+  --letra--tamaño--mediana: 25px;
+  --letra--tamaño--grande: 45px;
+}
+.box {
+  max-width: 1204px;
+  margin: 0 auto;
+}
+
+body {
+  background-image: url(../../assets/Imagenes/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: 165vh;
+  background-position: center;
+}
+
+label {
+  font-size: var(--letra--tamaño--mediana);
+  color: var(--color--azul--oscuro);
+}
+
+input {
+  padding-left: 55px;
+  border: none;
+  border-bottom: 4px solid var(--border--azul--oscuro);
+  font-size: var(--letra--tamaño--mediana);
+  width: 420px;
+  height: 55px;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  border: 4px solid var(--border--azul--oscuro);
+  border-radius: 8px;
+}
+
+.boton {
+  width: 280px;
+  height: 45px;
+  font-size: var(--letra--tamaño--pequeña);
+  border-radius: 100px;
+  color: var(--color--blanco);
+  font-weight: 600;
+  border: none;
+}
+
+/* Header */
+
+.header__logo {
+  height: 80px;
+  margin-left: 250px;
+  margin-top: 30px;
+}
+
+/* login */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.login {
+  background-color: var(--bgd--blanco);
+  width: 550px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  border: 5px solid var(--border--azul--oscuro);
+  border-radius: 20px;
+}
+
+.login__title {
+  font-size: var(--letra--tamaño--grande);
+  color: var(--color--azul--oscuro);
+  font-weight: 400;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__inputs {
+  display: flex;
+  gap: 15px;
+}
+
+.form__icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon__user {
+  position: absolute;
+  top: 370px;
+  left: 755px;
+}
+
+.icon__lock {
+  position: absolute;
+  top: 490px;
+  left: 755px;
+}
+
+.form__error {
+  display: none;
+  color: var(--color--red);
+}
+
+.login_register {
+  color: var(--color--azul--link);
+  font-size: var(--letra--tamaño--mediana);
+}
+
+.login__botones {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-top: 30px;
+}
+/* Botones */
+.boton__iniciar {
+  background-color: var(--bgd--azul--boton);
+}
+
+.boton__salir {
+  background-color: var(--bgd--rey--boton);
+}
