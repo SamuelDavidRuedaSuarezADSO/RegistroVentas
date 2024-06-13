@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/estilos/style.css" />
-    <title>Venta Muebles HomeHouse - login</title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/Imagenes/Logo.svg" alt="" class="header__logo" />
-    </header>
-    <main>
-      <section class="login">
-        <h1 class="login__title">Inicio de Seion</h1>
-        <form action="#" class="login__form">
-          <div class="login__form form__inputs">
-            <label for="user" class="form__label">Usuario:</label>
-            <img
-              src="assets/Imagenes/Iconos/user.svg"
-              alt=""
-              class="form__icon icon__user"
-            />
-            <input type="text" id="user" class="form__input" />
-            <p class="form__error">error o info</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/estilos/style.css" />
+  <title>Venta Muebles HomeHouse - login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <img src="assets/Imagenes/LogoArreglado.svg" alt="" class="header__logo" />
+  </header>
+  <main>
+    <section class="login">
+      <h1 class="login__title">Inicio de Sesión</h1>
+      <form action="#" class="login__form">
+        <div class="login__input-group">
+          <label for="user" class="login__label">Usuario:</label>
+          <div class="login__input-wrapper">
+            <i class="fa-solid fa-user login__icon"></i>
+            <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." />
           </div>
-          <div class="login__form form__inputs">
-            <label for="contra">Contraseña:</label>
-            <img
-              src="assets/Imagenes/Iconos/lock.svg"
-              alt=""
-              class="form__icon icon__lock"
-            />
-            <input type="password" />
-            <p class="form__error">error o info</p>
-          </div>
-        </form>
-        <div class="login__botones">
-          <button class="boton boton__iniciar">Iniciar Sesion</button>
-          <button class="boton boton__salir">Salir</button>
+          <p class="login__error">error o info</p>
         </div>
-      </section>
-    </main>
-    <script src="scripts/main.js"></script>
-  </body>
+        <div class="login__input-group">
+          <label for="contra" class="login__label">Contraseña:</label>
+          <div class="login__input-wrapper">
+            <i class="fa-solid fa-lock login__icon"></i>
+            <input type="password" id="contra" class="login__input" placeholder="Ingresa tu contraseña..." />
+          </div>
+          <p class="login__error">error o info</p>
+        </div>
+      </form>
+      <div class="login__buttons">
+        <button class="login__button login__button--primary">Iniciar Sesión</button>
+        <button class="login__button login__button--secondary">Salir</button>
+      </div>
+    </section>
+  </main>
+  <script src="scripts/main.js"></script>
+</body>
+
 </html>
