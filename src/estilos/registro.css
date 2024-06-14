@@ -63,13 +63,13 @@ input:focus {
 }
 
 /* Header */
-header{
+header {
   height: 120px;
   padding-left: 200px;
   display: flex;
   align-items: center;
 }
-.header{
+.header {
   width: 270px;
   height: 85px;
   background-color: var(--bgd--blanco);

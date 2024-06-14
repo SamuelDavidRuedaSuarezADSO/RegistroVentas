@@ -23,7 +23,7 @@
   --letra--tamaño--mediana: 20px;
   --letra--tamaño--grande: 45px;
   --max-width: 1204px;
-  --positon-center: center
+  --positon-center: center;
 }
 
 .box {
@@ -38,12 +38,11 @@ body {
   background-position: var(--positon-center);
 }
 
-
 .header__logo {
   height: 80px;
   margin-left: 250px;
   margin-top: 30px;
-  font-family: 'Ubuntu',sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 main {
