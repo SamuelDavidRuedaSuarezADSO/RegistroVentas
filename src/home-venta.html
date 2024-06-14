@@ -12,12 +12,57 @@
 </head>
 
 <body>
-  <header>
-    <button>
+  <header class="home">
+    <button class="home__bars">
       <i class="fa-solid fa-bars home__icon"></i>
     </button>
-    <img src="../assets/Imagenes/LogoArreglado.svg" alt="logo" class="home__logo">
+    <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
+    <h1 class="home__title">HOME</h1>
   </header>
+  <main>
+    <section class="search">
+      <button class="search__lupa">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <form action="" class="search__form">
+        <input type="search" name="input" id="input" class="form__input">
+        <button class="form__add">Buscar</button>
+      </form>
+    </section>
+    <section class="datos">
+      <form action="" class="datos__form">
+        <div class="form__users">
+          <label for="empleNom" class="user__label">Nombre del empleado:</label>
+          <input type="text" id="empleNom" name="empleNom" class="user__input">
+          <label for="empleCod" class="user__label">Codigo del empleado:</label>
+          <input type="text" id="empleCod" name="empleCod" class="user__input">
+          <label for="ClienNom" class="user__label">Nombre del Cliente:</label>
+          <input type="text" id="ClienNom" name="ClienNom" class="user__input">
+          <label for="clienCod" class="user__label">Codigo del Cliente:</label>
+          <input type="text" id="clienCod" name="clienCod" class="user__input">
+        </div>
+        <div class="form__data">
+          <label for="descr" class="data__label">Descripción:</label>
+          <input type="text" id="descr" name="descr" class="data__input">
+          <label for="Cod" class="data__label">Codigo del mueble:</label>
+          <input type="text" id="Cod" name="Cod" class="data__input">
+          <label for="Nom" class="data__label">Nombre del mueble:</label>
+          <input type="text" id="Nom" name="Nom" class="data__input">
+          <label for="Cant" class="data__label">Cantidad:</label>
+          <input type="text" id="Cant" name="Cant" class="data__input">
+        </div>
+      </form>
+    </section>
+    <section class="table">
+
+    </section>
+    <section class="botones">
+
+    </section>
+    <section class="copy">
+
+    </section>
+  </main>
 </body>
-  
+
 </html>
