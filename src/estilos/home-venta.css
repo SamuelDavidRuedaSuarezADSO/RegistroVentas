@@ -4,5 +4,50 @@
   box-sizing: border-box;
 }
 :root{
-  
+  --bgd--blanco: #fff;
+  --bgd--negro: #000;
+  --bgd--azul--principal: #2196f3;
+  --bgd--azul--boton: #37a0f4;
+  --bgd--rey--boton: #1d5a8a;
+  --color--azul--principal: #2196f3;
+  --color--negro: #000;
+  --color--blanco: #fff;
+  --color--azul--oscuro: #023761;
+  --color--red: red;
+  --color--azul--link: #336a95;
+  --border--azul--oscuro: #023761;
+  --border--azul--pricipal: #2196f3;
+  --letra--tamaño--pequeña: 17px;
+  --letra--tamaño--mediana: 20px;
+  --letra--tamaño--grande: 45px;
+  --height--input: 55px;
+  --max--width: 1850px;
+  --height--header: 60px;
+}
+header{
+  background-color: var(--bgd--azul--boton);
+}
+.home{
+  height: var(--height--header);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--max--width);
+  margin: 0 auto;
+}
+.home__bars{
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+}
+.home__icon{
+  font-size: 40px;
+  color: var(--color--blanco);
+}
+.home__logo{
+  height: 50px;
+}
+.home__title{
+  color: var(--color--blanco);
 }
