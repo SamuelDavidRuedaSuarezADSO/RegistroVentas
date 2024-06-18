@@ -1,38 +1,29 @@
 *{
   margin: 0;
   padding: 0;
+
   box-sizing: border-box;
 }
 :root{
-  --bgd--blanco: #fff;
-  --bgd--negro: #000;
   --bgd--azul--principal: #2196f3;
-  --bgd--azul--boton: #37a0f4;
-  --bgd--rey--boton: #1d5a8a;
-  --color--azul--principal: #2196f3;
-  --color--negro: #000;
-  --color--blanco: #fff;
-  --color--azul--oscuro: #023761;
-  --color--red: red;
-  --color--azul--link: #336a95;
-  --border--azul--oscuro: #023761;
-  --border--azul--pricipal: #2196f3;
+  
   --letra--tamaño--pequeña: 17px;
   --letra--tamaño--mediana: 20px;
   --letra--tamaño--grande: 45px;
   --height--input: 55px;
   --max--width: 1850px;
   --height--header: 60px;
+  --padding: 10px;
 }
 header{
-  background-color: var(--bgd--azul--boton);
+  background-color: var();
 }
 .home{
-  height: var(--height--header);
+  height: var();
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: var(--max--width);
+  width: var();
   margin: 0 auto;
 }
 .home__bars{
@@ -43,11 +34,63 @@ header{
 }
 .home__icon{
   font-size: 40px;
-  color: var(--color--blanco);
+  color: var();
 }
 .home__logo{
   height: 50px;
 }
 .home__title{
+  color: var();
+}
+/* search */
+.search{
+  display: flex;
+  height: 40px;
+  gap: 15px;
+}
+.search__lupa{
+  width: 40px;
+  height: 40px;
+  background-color: var();
+  border: outset 2px var();
+}
+.search__lupa:hover{
+  background-color: var();
+}
+.search__lupa:active{
+  background-color: var();
+  border: inset 2px var();
+}
+.search__lupa--icon{
+  color: var();
+  font-size: 30px;
+}
+.search__form{
+
+}
+.form__input{
+  width: 300px;
+  height: 40px;
+  border: solid 2px var();
+  padding: var();
+  font-size: 1rem;
+}
+.form__input:focus{
+  outline: none;
+  border: solid 2px var();
+}
+.search__add{
+  width: 80px;
+  background-color: var();
+  height: 40px;
   color: var(--color--blanco);
+  font-weight: 700;
+  border: outset 2px var();
+}
+.search__add:hover{
+  background-color: var();
+}
+.search__add:active{
+  background-color: var();
+  border: inset 2px var();
 }
