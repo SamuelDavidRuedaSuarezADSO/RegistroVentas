@@ -22,6 +22,30 @@
     </div>
   </header>
   <main>
+    <section class="datos">
+      <form action="" class="datos__form">
+        <div class="form__users">
+          <label for="empleNom" class="user__label">NOMBRE DEL EMPLEADO:</label>
+          <input type="text" id="empleNom" name="empleNom" class="user__input">
+          <label for="empleCod" class="user__label">CODIGO DEL EMPLEADO:</label>
+          <input type="text" id="empleCod" name="empleCod" class="user__input">
+          <label for="ClienNom" class="user__label">NOMBRE DEL CLIENTE:</label>
+          <input type="text" id="ClienNom" name="ClienNom" class="user__input">
+          <label for="clienCod" class="user__label">CODIGO DEL CLIENTE:</label>
+          <input type="text" id="clienCod" name="clienCod" class="user__input">
+        </div>
+        <div class="form__users">
+          <label for="descr" class="user__label">DESCRIPCIÓN:</label>
+          <input type="text" id="descr" name="descr" class="user__input">
+          <label for="Cod" class="user__label">CODIGO DEL MUEBLE:</label>
+          <input type="text" id="Cod" name="Cod" class="user__input">
+          <label for="Nom" class="user__label">NOMBRE DEL MUEBLE:</label>
+          <input type="text" id="Nom" name="Nom" class="user__input">
+          <label for="Cant" class="user__label">CANTIDAD:</label>
+          <input type="text" id="Cant" name="Cant" class="user__input">
+        </div>
+      </form>
+    </section>
     <section class="search">
       <button class="search__lupa">
         <i class="fa-solid fa-magnifying-glass search__lupa--icon"></i>
@@ -29,42 +53,189 @@
       <form action="" class="search__form">
         <input type="search" name="input" id="input" class="form__input">
       </form>
-      <button class="search__add">Buscar</button>
-    </section>
-    <section class="datos">
-      <form action="" class="datos__form">
-        <div class="form__users">
-          <label for="empleNom" class="user__label">Nombre del empleado:</label>
-          <input type="text" id="empleNom" name="empleNom" class="user__input">
-          <label for="empleCod" class="user__label">Codigo del empleado:</label>
-          <input type="text" id="empleCod" name="empleCod" class="user__input">
-          <label for="ClienNom" class="user__label">Nombre del Cliente:</label>
-          <input type="text" id="ClienNom" name="ClienNom" class="user__input">
-          <label for="clienCod" class="user__label">Codigo del Cliente:</label>
-          <input type="text" id="clienCod" name="clienCod" class="user__input">
-        </div>
-        <div class="form__data">
-          <label for="descr" class="data__label">Descripción:</label>
-          <input type="text" id="descr" name="descr" class="data__input">
-          <label for="Cod" class="data__label">Codigo del mueble:</label>
-          <input type="text" id="Cod" name="Cod" class="data__input">
-          <label for="Nom" class="data__label">Nombre del mueble:</label>
-          <input type="text" id="Nom" name="Nom" class="data__input">
-          <label for="Cant" class="data__label">Cantidad:</label>
-          <input type="text" id="Cant" name="Cant" class="data__input">
-        </div>
-      </form>
+      <button class="search__add">Añadir</button>
     </section>
     <section class="table">
-
+      <table class="table__table">
+        <tbody class="table__table table__table--body">
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--last">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--last">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--last">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--last">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--last">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--primer">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--name">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--segundo">
+              <input type="text" class="table__input" disabled>
+            </th>
+            <th class="table__body table--last">
+              <input type="text" class="table__input" disabled>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table__fin">
+        <tr class="table__body">
+          <th class="table__body table--press"></th>
+        </tr>
+      </table>
     </section>
     <section class="botones">
-
+      <button class="botones__boton boton--eliminar">ELIMINAR</button>
+      <button class="botones__boton boton--pagar">PAGAR</button>
     </section>
-    <section class="copy">
-
+    <section class="info">
+      <h3 class="info__copy">©2024 SamuelRueda. Todos los derechos reservador</h3>
+      <div class="info__fecha" id="fecha"></div>
     </section>
   </main>
+  <script src="scripts/main.js"></script>
 </body>
 
 </html>

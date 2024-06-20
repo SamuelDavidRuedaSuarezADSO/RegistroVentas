@@ -5,25 +5,29 @@
   box-sizing: border-box;
 }
 :root{
-  --bgd--azul--principal: #2196f3;
-  
+  --azul-principal: #2196f3;
+  --azul-medio: #0366b7;
+  --azul-medio-hover: #3ca3f7;
+  --azul-oscuro: #04487E;
+  --color-blanco: #fff;
+  --color-negro: #000;
   --letra--tamaño--pequeña: 17px;
   --letra--tamaño--mediana: 20px;
   --letra--tamaño--grande: 45px;
-  --height--input: 55px;
-  --max--width: 1850px;
-  --height--header: 60px;
+  --height-input: 55px;
+  --max--width: 1600px;
+  --height-header: 60px;
   --padding: 10px;
 }
 header{
-  background-color: var();
+  background-color: var(--azul-principal);
 }
 .home{
-  height: var();
+  height: var(--height-header);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: var();
+  padding: 0 30px 0 30px;
   margin: 0 auto;
 }
 .home__bars{
@@ -34,16 +38,66 @@ header{
 }
 .home__icon{
   font-size: 40px;
-  color: var();
+  color: var(--color-blanco);
 }
 .home__logo{
   height: 50px;
 }
 .home__title{
-  color: var();
+  color: var(--color-blanco);
 }
+
+/* main */
+
+main{
+  width: 100%;
+  max-width: var(--max--width);
+  margin: 0 auto;
+  /* display: flex;
+  flex-direction: column; */
+
+}
+
+/* Datos */
+
+.datos{
+  margin-top: 20px;
+}
+.datos__form{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.form__users{
+  width: 700px;
+  display: grid;
+  flex-direction: column;
+  grid-template-columns: auto auto;
+  gap: 15px;
+}
+.user__label{
+  font-size: var(--letra--tamaño--mediana);
+  align-self: center;
+}
+.user__input{
+  width: 400px;
+  height: 45px;
+  padding: var(--padding);
+  font-size: var(--letra--tamaño--pequeña);
+  border: none;
+  border-bottom: solid 4px;
+  border-color: var(--azul-principal);
+}
+.user__input:focus{
+  outline: none;
+  border: solid 4px;
+  border-color: var(--azul-principal);
+}
+
 /* search */
+
 .search{
+  margin-top: 30px;
   display: flex;
   height: 40px;
   gap: 15px;
@@ -51,46 +105,100 @@ header{
 .search__lupa{
   width: 40px;
   height: 40px;
-  background-color: var();
-  border: outset 2px var();
+  background-color: var(--azul-principal);
+  border: outset 3px;
+  border-color: var(--azul-medio) var(--azul-oscuro) var(--azul-oscuro) var(--azul-medio);
 }
 .search__lupa:hover{
-  background-color: var();
+  background-color: var(--azul-medio-hover);
 }
 .search__lupa:active{
-  background-color: var();
-  border: inset 2px var();
+  border: inset 3px;
+  border-color: var(--azul-medio) var(--azul-oscuro) var(--azul-oscuro) var(--azul-medio);
 }
 .search__lupa--icon{
-  color: var();
-  font-size: 30px;
-}
-.search__form{
-
+  color: var(--color-blanco);
+  font-size: 28px;
 }
 .form__input{
-  width: 300px;
+  width: 350px;
   height: 40px;
-  border: solid 2px var();
-  padding: var();
+  border: solid 4px var(--azul-principal);
+  padding: var(--padding);
   font-size: 1rem;
 }
 .form__input:focus{
   outline: none;
-  border: solid 2px var();
+  border: solid 4px var(--azul-medio-hover);
 }
 .search__add{
   width: 80px;
-  background-color: var();
+  background-color: var(--azul-principal);
   height: 40px;
-  color: var(--color--blanco);
+  color: var(--color-blanco);
   font-weight: 700;
-  border: outset 2px var();
+  border: outset 3px;
+  border-color: var(--azul-medio) var(--azul-oscuro) var(--azul-oscuro) var(--azul-medio);
 }
 .search__add:hover{
-  background-color: var();
+  background-color: var(--azul-medio-hover);
 }
 .search__add:active{
-  background-color: var();
-  border: inset 2px var();
+  border: inset 3px;
+  border-color: var(--azul-medio) var(--azul-oscuro) var(--azul-oscuro) var(--azul-medio);
 }
+
+/* table */
+.table{
+  display: flex;
+  flex-direction: column;
+}
+
+.table__table{
+  border: 4px solid;
+  border-color: var(--azul-principal);
+  background-color: var(--azul-principal);
+  margin-top: 30px;
+  width: 100%;
+}
+.table__body{
+  border: 1px solid;
+  border-color: var(--azul-principal);
+  padding: 8px;
+  text-align: left;
+  background-color: var(--color-blanco);
+}
+.table--primer{
+  width: 150px;
+}
+.table--name{
+  width: 380px;
+  height: 40px;
+}
+.table--segundo{
+  width: 200px;
+}
+.table--last{
+  width: 150px;
+}
+.table__input{
+  width: 100%;
+  height: 25px;
+  border: none;
+  font-size: var(--letra--tamaño--pequeña);
+}
+.table__input:focus{
+  outline: none;
+}
+.table__fin{
+  width: 245px;
+  margin-top: 5px;
+  border: 3px solid;
+  border-color: var(--azul-principal);
+  background-color: var(--azul-principal);
+  align-self: flex-end;
+}
+.table--press{
+  height: 40px;
+}
+
