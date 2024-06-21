@@ -10,7 +10,7 @@
   --color-negro: #000;
   --color-rojo: #ce2d2d;
   --azul-principal: #2196f3;
-  --azul-oscuro: #04487E;
+  --azul-oscuro: #04487e;
   --azul-medio: #0366b7;
   --azul-medi-hover: #3ca3f7;
   --azul-oscu-hover: #0c5a99;
@@ -19,7 +19,6 @@
   --letra--tamaño--grande: 45px;
   --max-width: 1204px;
 }
-
 
 body {
   background-image: url(../../assets/Imagenes/fondoArreglo.jpg);
@@ -115,7 +114,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 13px;
-  margin-top: 30px;
 }
 
 .login__button {
@@ -150,18 +148,3 @@ main {
   border-color: var(--azul-oscuro);
 }
 
-.login__button--secondary {
-  background-color: var(--azul-oscuro);
-  border: 3px outset var(--azul-medi-hover);
-}
-
-.login__button--secondary:hover {
-  background-color: var(--azul-oscu-hover);
-}
-
-.login__button--secondary:active {
-  background-color: var(--azul-medio);
-  border-width: 3px;
-  border-style: inset;
-  border-color: var(--azul-medi-hover);
-}

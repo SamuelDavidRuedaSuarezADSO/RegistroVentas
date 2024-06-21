@@ -10,3 +10,11 @@ function toggleMenu() {
     sidebar.style.width = "200px";
   }
 }
+
+let login = document.getElementById("login");
+let user = document.getElementById("user");
+let password = document.getElementById("password");
+
+let u = user.innerText;
+
+console.log(u)
