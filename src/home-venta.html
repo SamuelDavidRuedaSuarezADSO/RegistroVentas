@@ -14,11 +14,22 @@
 <body>
   <header>
     <div class="home">
-      <button class="home__bars">
+      <button class="home__bars" onclick="toggleMenu()">
         <i class="fa-solid fa-bars home__icon"></i>
       </button>
+      <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">
+          <button class="home__bars icon">
+            <i class="fa-solid fa-bars home__icon "></i>
+          </button>
+        </a>
+        <a href="#home">Venta</a>
+        <a href="#services">Servicios</a>
+        <a href="#about">Acerca de</a>
+        <a href="#contact">Contacto</a>
+      </div>
       <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
-      <h1 class="home__title">HOME</h1>
+      <h1 class="home__title">Venta</h1>
     </div>
   </header>
   <main>
@@ -221,9 +232,16 @@
         </tbody>
       </table>
       <table class="table__fin">
-        <tr class="table__body">
-          <th class="table__body table--press"></th>
-        </tr>
+        <tbody>
+          <tr>
+            <th>
+              <p class="table__p">TOTAL A PAGAR:</p>
+            </th>
+          </tr>
+          <tr class="table__body">
+            <th class="table__body table--press"></th>
+          </tr>
+        </tbody>
       </table>
     </section>
     <section class="botones">
