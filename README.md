@@ -13,17 +13,13 @@ git clone https://github.com/SamuelDavidRuedaSuarezADSO/RegistroVentas.git
 crear y posicionar en la rama inicio
 
 ```
-
 git checkout -b inicio
-
 ```
 
 hacer el pull de la rama inicio
 
 ```
-
 git pull origin inicio
-
 ```
 
 crear y posicionarse en la rama desarrollo
