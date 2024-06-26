@@ -18,7 +18,7 @@
   <main>
     <section class="login">
       <h1 class="login__title">Inicio de Sesión</h1>
-      <form action="#" class="login__form">
+      <form action="#" class="login__form" id="form">
         <div class="login__input-group">
           <label for="user" class="login__label">Usuario:</label>
           <div class="login__input-wrapper">
@@ -35,14 +35,15 @@
           </div>
           <p class="login__error">error o info</p>
         </div>
+        <a href="src/resgistro.html">registro</a>
+        <div class="login__buttons">
+          <button class="login__button login__button--primary" id="login" type="submit"><a href="#">Iniciar
+              Sesion</a></button>
+        </div>
       </form>
-      <a href="src/resgistro.html">registro</a>
-      <div class="login__buttons">
-        <a href="#" class="login__button login__button--primary" id="login">Iniciar Sesión</a>
-      </div>
     </section>
   </main>
-  <script src="scripts/main.js"></script>
+  <script src="src/scripts/login.js" type="module"></script>
 </body>
 
 </html>
