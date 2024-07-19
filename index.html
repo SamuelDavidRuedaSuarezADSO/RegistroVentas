@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/estilos/style.css" />
+  <title>Venta Muebles HomeHouse - login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <img src="assets/Imagenes/Logo.svg" alt="" class="header__logo" />
+  </header>
+  <main>
+    <section class="login">
+      <h1 class="login__title">Inicio de Sesión</h1>
+      <form action="#" class="login__form" id="form">
+        <div class="login__input-group">
+          <label for="user" class="login__label">Usuario:</label>
+          <div class="login__input-wrapper">
+            <i class="fa-solid fa-user login__icon"></i>
+            <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." />
+          </div>
+          <p class="login__error">error o info</p>
+        </div>
+        <div class="login__input-group">
+          <label for="contra" class="login__label">Contraseña:</label>
+          <div class="login__input-wrapper">
+            <i class="fa-solid fa-lock login__icon"></i>
+            <input type="password" id="contra" class="login__input" placeholder="Ingresa tu contraseña..." />
+          </div>
+          <p class="login__error">error o info</p>
+        </div>
+        <a href="src/resgistro.html">registro</a>
+        <div class="login__buttons">
+          <button class="login__button login__button--primary" id="login" type="submit"><a href="#">Iniciar
+              Sesion</a></button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="src/scripts/login.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul-medio: #0366b7;
+  --azul-medio-hover: #3ca3f7;
+  --azul-oscuro: #04487e;
+  --azul-principal: #2196f3;
+  --blanco-hover: #f1f1f1;
+  --border-ancho: 3px;
+  --border-input: 4px;
+  --boton-tamaño: 45px;
+  --cien-porci: 100%;
+  --color-blanco: #fff;
+  --color-negro: #000;
+  --color-rojo: #f32121;
+  --color-verde: #00b612;
+  --height-header: 60px;
+  --height-input: 45px;
+  --letra--mediana--grande: 25px;
+  --letra--tamaño--grande: 40px;
+  --letra--tamaño--mediana: 20px;
+  --letra--tamaño--pequeña: 17px;
+  --max--width: 1600px;
+  --padding: 10px;
+  --rojo-hover: #f74c4c;
+  --rojo-oscuro: #f56262;
+  --verde-hover: #11ce50;
+  --verde-oscuro: #0ac438;
+}
+
+.login__button--secondary {
+  background-color: var(--azul-oscuro);
+  border: 3px outset var(--azul-medi-hover);
+}
+
+.login__button--secondary:hover {
+  background-color: var(--azul-oscu-hover);
+}
+
+.login__button--secondary:active {
+  background-color: var(--azul-medio);
+  border-width: 3px;
+  border-style: inset;
+  border-color: var(--azul-medi-hover);
+}

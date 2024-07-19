@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="estilos/registro.css" />
-    <title>Venta Muebles HomeHouse - registrarse</title>
-  </head>
 
-  <body>
-    <header>
-      <img src="../Imagenes/Logo.svg" alt="" class="header__logo" />
-    </header>
-    <main>
-      <section class="register">
-        <h1 class="register__title">Registrate</h1>
-        <form action="#" class="register__form">
-          <div class="form__inputs">
-            <label for="user" class="form__label">Nombre del Usuario:</label>
-            <img
-              src="../assets/Imagenes/Iconos/user.svg"
-              alt=""
-              class="form__icon icon__user"
-            />
-            <input type="text" id="user" class="form__input" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="estilos/registro.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Venta Muebles HomeHouse - registrarse</title>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <img src="../assets/Imagenes/LogoArreglado.svg" alt="" class="header__logo" />
+    </div>
+  </header>
+  <main>
+    <section class="register">
+      <h1 class="register__title">Registrate</h1>
+      <form action="#" class="register__form">
+        <div class="register__input-group">
+          <label for="user" class="register__label">Nombre del Usuario:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-user register__icon"></i>
+            <input type="text" id="user" class="register__input" placeholder="Crea tu nombre de Usuario..." />
           </div>
-          <div class="form__inputs">
-            <label for="email" class="form__label">Email:</label>
-            <img
-              src="../assets/Imagenes/Iconos/email.svg"
-              alt=""
-              class="form__icon icon__email"
-            />
-            <input type="text" id="email" class="form__input" />
-          </div>
-          <div class="form__inputs">
-            <label for="contra" class="form__label">Contraseña:</label>
-            <img
-              src="../assets/Imagenes/Iconos/lock.svg"
-              alt=""
-              class="form__icon icon__email"
-            />
-            <input type="text" id="contra" class="form__input" />
-          </div>
-          <div class="form__inputs">
-            <label for="contraC" class="form__label"
-              >Repite la Contraseña:</label
-            >
-            <img
-              src="../assets/Imagenes/Iconos/unlock.svg"
-              alt=""
-              class="form__icon icon__email"
-            />
-            <input type="text" id="contraC" class="form__input" />
-          </div>
-        </form>
-        <div class="register__botones">
-          <button class="boton boton__iniciar">Listo</button>
-          <button class="boton boton__salir">Cancelar</button>
         </div>
-      </section>
-    </main>
-  </body>
+        <div class="register__input-group">
+          <label for="email" class="register__label">Email:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-envelope register__icon"></i>
+            <input type="text" id="email" class="register__input" placeholder="Escribe tu correo..." />
+          </div>
+        </div>
+        <div class="register__input-group">
+          <label for="contra" class="register__label">Contraseña:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-lock register__icon"></i>
+            <input type="password" id="contra" class="register__input" placeholder="Crea tu contraseña..." />
+          </div>
+        </div>
+        <div class="register__input-group">
+          <label for="contraC" class="register__label">Repite la Contraseña:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-shield register__icon"></i>
+            <input type="password" id="contraC" class="register__input" placeholder="Repite tu contraseña..." />
+          </div>
+        </div>
+      </form>
+      <div class="register__buttons">
+        <button class="register__button register__button--primary">Listo</button>
+        <button class="register__button register__button--secondary">Cancelar</button>
+      </div>
+    </section>
+  </main>
+  <script src="scripts/main.js" type="module"></script>
+</body>
+
 </html>
