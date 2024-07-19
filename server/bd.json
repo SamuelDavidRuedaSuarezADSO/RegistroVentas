@@ -1,42 +1,58 @@
 {
-    "roles": [
-        {
-            "id": 1,
-            "name": "admin"
-        },
-        {
-            "id": 2,
-            "name": "emple"
-        },
-        {
-            "id": 3,
-            "name": "gerente"
-        }
-    ],
-    "usuarios": [
-        {
-            "id": 1,
-            "nombre": "juan",
-            "apellido": "Perez",
-            "email": "juanperez@gmail.com",
-            "password": "admin",
-            "rol": 1
-        },
-        {
-            "id": 2,
-            "nombre": "pedro",
-            "apellido": "Perez",
-            "email": "pedroperez@gmail.com",
-            "password": "123456",
-            "rol": 2
-        },
-        {
-            "id": 3,
-            "nombre": "maria",
-            "apellido": "Perez",
-            "email": "mariaperez@gmail.com",
-            "password": "contraseña",
-            "rol": 3
-        }
-    ]
+  "roles": [
+    {
+      "id": "1",
+      "name": "admin"
+    },
+    {
+      "id": "2",
+      "name": "emple"
+    },
+    {
+      "id": "3",
+      "name": "gerente"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "juan",
+      "apellido": "Perez",
+      "email": "juanperez@gmail.com",
+      "password": "admin",
+      "rol": 1
+    },
+    {
+      "id": "2",
+      "nombre": "pedro",
+      "apellido": "Perez",
+      "email": "pedroperez@gmail.com",
+      "password": "123456",
+      "rol": 2
+    },
+    {
+      "id": "3",
+      "nombre": "maria",
+      "apellido": "Perez",
+      "email": "mariaperez@gmail.com",
+      "password": "contraseña",
+      "rol": 3
+    },
+    {
+      "id": "8e01",
+      "nombre": "admin",
+      "apellido": "rueda",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "rol": "3"
+    },
+    {
+      "id": "f1c0",
+      "nombre": "Jose",
+      "apellido": "Puello",
+      "email": "josepuello@gmail.com",
+      "password": "Con244244",
+      "rol": "2"
+    }
+  ]
 }

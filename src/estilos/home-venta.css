@@ -140,7 +140,8 @@ main {
 .search {
   margin-top: 30px;
   display: flex;
-  height: 40px;
+  align-items: center;
+  height: 60px;
   gap: 15px;
 }
 .search__lupa {
@@ -165,7 +166,6 @@ main {
 }
 .form__input {
   width: 350px;
-  height: var(--height-input);
   border: solid var(--border-input) var(--azul-principal);
   padding: var(--padding);
   font-size: 1rem;

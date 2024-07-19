@@ -6,9 +6,9 @@ document.getElementById('fecha').textContent = fechaActual.toLocaleDateString('e
 
 function toggleMenu() {
   let sidebar = document.getElementById("sidebar");
-  if (sidebar.style.width === "200px") {
+  if (sidebar.style.width === "250px") {
     sidebar.style.width = "0";
   } else {
-    sidebar.style.width = "200px";
+    sidebar.style.width = "250px";
   }
 }

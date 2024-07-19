@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
 
 :root {
@@ -13,23 +14,29 @@
   --border-ancho: 3px;
   --border-input: 4px;
   --boton-tamaño: 45px;
+  --border-radius: 8px;
+  --border-radius-grande: 20px;
   --cien-porci: 100%;
   --color-blanco: #fff;
   --color-negro: #000;
   --color-rojo: #f32121;
   --color-verde: #00b612;
   --height-header: 60px;
-  --height-input: 45px;
+  --height-input: 55px;
   --letra--mediana--grande: 25px;
   --letra--tamaño--grande: 40px;
   --letra--tamaño--mediana: 20px;
   --letra--tamaño--pequeña: 17px;
   --max--width: 1600px;
   --padding: 10px;
+  --padding-grander: 45px;
   --rojo-hover: #f74c4c;
   --rojo-oscuro: #f56262;
   --verde-hover: #11ce50;
   --verde-oscuro: #0ac438;
+  --font-size-normal: 1rem;
+  --font-size-grande: 1.25rem;
+  --width-input: 420px;
 }
 
 .login__button--secondary {
