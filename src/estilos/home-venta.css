@@ -251,6 +251,9 @@ main {
 .table--press {
   height: 40px;
 }
+th{
+  color: var(--color-blanco);
+}
 
 /* botones */
 

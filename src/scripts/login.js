@@ -1,5 +1,6 @@
-import { usuarios } from "./modulo.js";
+import { usuario } from "./modulo.js";
 
+let usuarios;
 let linkHome = "src/home-venta.html";
 
 const $boton = document.querySelector("#login");
@@ -10,22 +11,24 @@ const $link = document.querySelector("#login > a")
 
 const validar = (event) => {
   event.preventDefault();
-  let usuario = $user.values.trim();
-  let passw = $contra.values.trim();
-  console.log(usuario)
-  if (usuario == "" || passw == "") {
+  let user = $user.value.trim();
+  let passw = $contra.value;
+  if (user == "" || passw == "") {
     alert("Rellene todos los campos")
   }
   else {
-    usuarios(id)
-      .then((response) => {
-        if (usuario == response.user && passw == response.contraseña) {
-          alert("entro")
+    usuario()
+      .then((r) => {
+        r.forEach((x) => {
+          if (user == x.nombre && passw == x.password) {
+            location.href = linkHome;
+          }
+        }); 
+      })
+      .catch(
+        (error) => {
+          alert(error)
         }
-        else {
-          alert("no valido")
-        }
-      }
       )
   }
 }
