@@ -42,10 +42,12 @@
   </header>
   <main>
     <section class="datos">
-      <form action="" class="datos__form">
+      <form action="" class="datos__form" id="form">
         <div class="form__users">
           <label for="empleNom" class="user__label">NOMBRE DEL EMPLEADO:</label>
-          <input type="text" id="empleNom" name="empleNom" class="user__input">
+          <select type="text" id="empleNom" name="empleNom" class="user__input">
+            
+          </select>
           <label for="empleCod" class="user__label">CODIGO DEL EMPLEADO:</label>
           <input type="text" id="empleCod" name="empleCod" class="user__input">
           <label for="ClienNom" class="user__label">NOMBRE DEL CLIENTE:</label>
@@ -86,7 +88,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody class="table__table table__table--body">          
+        <tbody class="table__table table__table--body" id="tbody">          
           <!-- <tr class="table__body">
             <th class="table__body table--primer">
               <input type="text" class="table__input" disabled>
@@ -132,6 +134,7 @@
     </footer>
   </main>
   <script src="scripts/main.js"></script>
+  <script src="scripts/home.js" type="module"></script>
 </body>
 
 </html>
