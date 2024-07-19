@@ -1,27 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
-}
-
-:root {
-  --color-blanco: #fff;
-  --color-negro: #000;
-  --color-rojo: #df2727;
-  --azul-principal: #2196f3;
-  --azul-oscuro: #04487e;
-  --azul-medio: #0366b7;
-  --azul-medi-hover: #3ca3f7;
-  --azul-oscu-hover: #0c5a99;
-  --letra--tamaño--pequeña: 17px;
-  --letra--tamaño--mediana: 20px;
-  --letra--tamaño--grande: 45px;
-  --max-width: 1204px;
-  --input-height: 5px;
-  --border-radius: 8px;
-}
-
+@import url(global.css);
 
 body {
   background-image: url(../../assets/Imagenes/fondoArreglo.jpg);

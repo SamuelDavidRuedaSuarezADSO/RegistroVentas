@@ -66,6 +66,13 @@ header {
   z-index: 2;
 }
 
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -73,7 +80,9 @@ header {
   color: var(--blanco-hover);
   display: block;
 }
-.sidebar a:nth-child(2) {
+
+.sidebar .venta{
+  color: var(--color-blanco);
   text-decoration: underline;
   text-underline-offset: 7px;
 }
@@ -88,6 +97,9 @@ header {
   position: absolute;
   top: 0;
   font-size: 36px;
+}
+.sidebar__last{
+  margin-bottom: 20px;
 }
 /* main */
 
