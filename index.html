@@ -25,17 +25,16 @@
             <i class="fa-solid fa-user login__icon"></i>
             <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." />
           </div>
-          <p class="login__error">error o info</p>
+          <p class="login__error">Usuario incorrecto</p>
         </div>
         <div class="login__input-group">
-          <label for="contra" class="login__label">Contraseña:</label>
+          <label for="contra" class="login__label" id="label">Contraseña:</label>
           <div class="login__input-wrapper">
-            <i class="fa-solid fa-lock login__icon"></i>
+            <i class="fa-solid fa-lock login__icon" id="candado"></i>
             <input type="password" id="contra" class="login__input" placeholder="Ingresa tu contraseña..." />
           </div>
-          <p class="login__error">error o info</p>
+          <p class="login__error" id="error">Contraseña incorrecta</p>
         </div>
-        <a href="src/resgistro.html">registro</a>
         <div class="login__buttons">
           <button class="login__button login__button--primary" id="login" type="submit">Iniciar secion</button>
         </div>

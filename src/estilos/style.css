@@ -8,7 +8,7 @@
 :root {
   --color-blanco: #fff;
   --color-negro: #000;
-  --color-rojo: #ce2d2d;
+  --color-rojo: #df2727;
   --azul-principal: #2196f3;
   --azul-oscuro: #04487e;
   --azul-medio: #0366b7;
@@ -18,7 +18,10 @@
   --letra--tamaño--mediana: 20px;
   --letra--tamaño--grande: 45px;
   --max-width: 1204px;
+  --input-height: 5px;
+  --border-radius: 8px;
 }
+
 
 body {
   background-image: url(../../assets/Imagenes/fondoArreglo.jpg);
@@ -108,7 +111,6 @@ main {
 
 .login__error {
   display: none;
-  color: var(--color-rojo);
 }
 
 .login__buttons {
@@ -147,5 +149,12 @@ main {
   border-width: 3px;
   border-style: inset;
   border-color: var(--azul-oscuro);
+}
+.error{
+  border: solid var(--input-height) var(--color-rojo);
+  border-radius: var(--border-radius);
+}
+.error__icon{
+  color: var(--color-rojo);
 }
 
