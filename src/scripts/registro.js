@@ -11,7 +11,7 @@ $cancelar.addEventListener("click", function (){
 const $form = document.querySelector("#form");
 const $user = document.querySelector("#user");
 const $last = document.querySelector("#last");
-const $email = document.querySelector("#email");
+const $dni = document.querySelector("#dni");
 const $contra = document.querySelector("#contra");
 const $contraC = document.querySelector("#contraC");
 const $rol = document.querySelector("#rol");
@@ -25,26 +25,26 @@ const $icon6 = document.querySelector(".icon6");
 
 const enviar = (event)=>{
     event.preventDefault();
+    let dni = $dni.value.trim();
     let user = $user.value.trim();
     let last = $last.value.trim();
-    let email = $email.value.trim();
     let contra = $contra.value.trim();
     let contraC = $contraC.value.trim();
     let rol = $rol.value.trim();
 
-    if(user == "" || last == "" || email == "" || contra == "" || contraC == "" ){
+    if(dni == "" ||user == "" || last == "" || contra == "" || contraC == "" ){
         alert("ERROR: Todos los campos son obligatorios");
     }
     else{
-        if(isNaN(user)){
-            if(isNaN(last)){
-                if(/^[\w-\.]+\@([\w-]+\.)+[\w-]{2,4}$/.test(email)){
+        if(!isNaN(dni)){
+            if(isNaN(user)){
+                if(isNaN(last)){
                     if(contra == contraC){
                         if(rol != "pre"){
                             const datos = {
+                                id: dni,
                                 nombre: user,
                                 apellido: last,
-                                email: email,
                                 password: contra,
                                 rol: rol
                             }
@@ -66,21 +66,21 @@ const enviar = (event)=>{
                     }
                 }
                 else{
-                    alert("ERROR: El EMAIL no es valido");
-                    $email.classList.add("error");
-                    $icon3.classList.add("error__icon");
+                    alert("ERROR: El APELLIDO no es valido");
+                    $last.classList.add("error");
+                    $icon2.classList.add("error__icon");
                 }
             }
             else{
-                alert("ERROR: El APELLIDO no es valido");
-                $last.classList.add("error");
-                $icon2.classList.add("error__icon");
+                alert("ERROR: El USUARIO no es valido");
+                $user.classList.add("error");
+                $icon.classList.add("error__icon");
             }
         }
         else{
-            alert("ERROR: El USUARIO no es valido");
-            $user.classList.add("error");
-            $icon.classList.add("error__icon");
+            alert("ERROR: El DOCUMENTO no es valido");
+            $dni.classList.add("error");
+            $icon3.classList.add("error__icon");
         }
     }
 }

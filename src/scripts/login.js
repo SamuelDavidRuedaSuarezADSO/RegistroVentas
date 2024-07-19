@@ -15,38 +15,43 @@ const $error2 = document.querySelector("#error");
 const validar = (event) => {
   event.preventDefault();
   let user = $user.value.trim();
-  let passw = $contra.value;
+  let passw = $contra.value.trim();
   if (user == "" || passw == "") {
     alert("Rellene todos los campos")
   }
   else {
-    usuario()
-      .then((r) => {
-        r.forEach((x) => {
-          if (user == x.nombre && passw == x.password) {
-            location.href = linkHome;
+    if(!isNaN(user)){    
+      usuario()
+        .then((r) => {
+          r.forEach((x) => {
+            if (user == x.id && passw == x.password) {
+              location.href = linkHome;
+            }
+            else{
+              $user.classList.add("error");
+              $contra.classList.add("error");
+              $icon.classList.add("error__icon");
+              $icon2.classList.add("error__icon");
+              $label.classList.add("error__icon");
+              $label2.classList.add("error__icon");
+              $user.value ="";
+              $contra.value ="";
+              $error.classList.remove("login__error");
+              $error2.classList.remove("login__error");
+              $error.classList.add("error__icon");
+              $error2.classList.add("error__icon");
+            }
+          }); 
+        })
+        .catch(
+          (error) => {
+            console.error(error);
           }
-          else{
-            $user.classList.add("error");
-            $contra.classList.add("error");
-            $icon.classList.add("error__icon");
-            $icon2.classList.add("error__icon");
-            $label.classList.add("error__icon");
-            $label2.classList.add("error__icon");
-            $user.value ="";
-            $contra.value ="";
-            $error.classList.remove("login__error");
-            $error2.classList.remove("login__error");
-            $error.classList.add("error__icon");
-            $error2.classList.add("error__icon");
-          }
-        }); 
-      })
-      .catch(
-        (error) => {
-          console.error(error);
-        }
-      )
+        )
+    }
+    else{
+      alert("El DOCUMENTO no es valido");
+    }
   }
 }
 

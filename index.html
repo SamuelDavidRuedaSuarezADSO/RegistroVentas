@@ -20,18 +20,18 @@
       <h1 class="login__title">Inicio de Sesión</h1>
       <form action="#" class="login__form" id="form">
         <div class="login__input-group">
-          <label for="user" class="login__label">Usuario:</label>
+          <label for="user" class="login__label">Documento:</label>
           <div class="login__input-wrapper">
             <i class="fa-solid fa-user login__icon"></i>
-            <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." />
+            <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." autocomplete="off"/>
           </div>
-          <p class="login__error">Usuario incorrecto</p>
+          <p class="login__error">El documento no Existe</p>
         </div>
         <div class="login__input-group">
           <label for="contra" class="login__label" id="label">Contraseña:</label>
           <div class="login__input-wrapper">
             <i class="fa-solid fa-lock login__icon" id="candado"></i>
-            <input type="password" id="contra" class="login__input" placeholder="Ingresa tu contraseña..." />
+            <input type="password" id="contra" class="login__input" placeholder="Ingresa tu contraseña..." autocomplete="off"/>
           </div>
           <p class="login__error" id="error">Contraseña incorrecta</p>
         </div>

@@ -53,6 +53,9 @@ main {
   top: 8px;
   left: 10px;
 }
+.id{
+  left: 5px;
+}
 .register__input{
   width: var(--width-input);
   height: var(--height-input);
