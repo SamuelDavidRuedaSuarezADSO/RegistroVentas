@@ -15,6 +15,13 @@
   ],
   "usuarios": [
     {
+      "id": "1",
+      "nombre": "admin",
+      "apellido": "admin",
+      "password": "admin",
+      "rol": "1"
+    },
+    {
       "id": "1102714658",
       "nombre": "Samuel",
       "apellido": "Perez",
