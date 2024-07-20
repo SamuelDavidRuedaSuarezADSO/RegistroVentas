@@ -40,7 +40,7 @@ y abrir el visual Studio Code
 code .
 ```
 
-## Para que las validaciones funciones necesitas tener instaldo json-server
+## Para que las validaciones funcionen necesitas tener instaldo json-server
 #### Para descargar json-server necesitas tener una version de node.js superior o igual a la 20.
 
 para instarlo de manera GLOBAL (si no deseas instalarlo de manera global sono quita -g del codigo).
