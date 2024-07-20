@@ -55,3 +55,10 @@ npx json-server bd.json
 ```
 
 ###### Cuando se termine de usar la base de datos Presiona CONTROL + C para cerrrar el json-server
+
+## Inisio sesion
+
+Si deseas entrar iniciar sesion y no sabes que usurio y password usar usa
+
+### Documento: 1
+### Contraseña: admin
