@@ -15,3 +15,9 @@ export const register = async (data) =>{
     .then((response) => response.json())
     .then((json) => console.log(json));
 }
+
+export const clientes = async () => {
+  const response = await fetch(`http://127.0.0.1:3000/clientes`);
+  const data = await response.json();
+  return data;
+}

@@ -34,6 +34,29 @@
       "apellido": "rueda",
       "password": "12345",
       "rol": "2"
+    },
+    {
+      "id": "123456",
+      "nombre": "Pedro",
+      "apellido": "Infante",
+      "password": "123456",
+      "rol": "2"
+    }
+  ],
+  "clientes":[
+    {
+      "id": "9887654",
+      "nombre": "Pedro",
+      "apellido": "perez",
+      "telefono": 31231231,
+      "email": "pedroperez@gmail.com"
+    },
+    {
+      "id": "23444444",
+      "nombre": "maria",
+      "apellido": "duarte",
+      "telefono": 315456776,
+      "email": "mariaduarte@gmail.com"
     }
   ]
 }

@@ -140,6 +140,7 @@ main {
   border: none;
   border-bottom: solid var(--border-input);
   border-color: var(--azul-principal);
+  color: var(--color-negro);
 }
 .user__input:focus {
   outline: none;
