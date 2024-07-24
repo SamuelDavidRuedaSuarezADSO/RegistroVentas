@@ -11,6 +11,7 @@
   --azul-oscuro: #04487e;
   --azul-principal: #2196f3;
   --blanco-hover: #f1f1f1;
+  --color-blanco: #fff;
   --border-ancho: 3px;
   --border-input: 4px;
   --boton-tamaño: 45px;
@@ -53,4 +54,28 @@
   border-width: 3px;
   border-style: inset;
   border-color: var(--azul-medi-hover);
+}
+
+.error{
+  border: none;
+  border-bottom: solid var(--border-ancho) var(--color-rojo);
+}
+.error:focus{
+  border: solid var(--border-ancho) var(--color-rojo);
+  border-radius: var(--border-radius);
+}
+.error__icon{
+  color: var(--color-rojo);
+}
+.bien{
+  border: none;
+  border-bottom: solid var(--border-ancho) var(--color-verde);
+}
+.bien:focus{
+  border: none;
+  border: solid var(--border-ancho) var(--color-verde);
+  border-radius: var(--border-radius);
+}
+.bien__icon{
+  color: var(--color-verde);
 }

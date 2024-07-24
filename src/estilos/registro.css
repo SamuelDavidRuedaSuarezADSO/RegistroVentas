@@ -57,15 +57,17 @@ main {
   left: 5px;
 }
 .register__input{
-  width: var(--width-input);
-  height: var(--height-input);
-  padding-left: 58px;
-  font-size: 0.95rem;
+  padding-left: 55px;
   border: none;
-  border-bottom: solid var(--border-ancho) var(--azul-oscuro);
+  border-bottom: 4px solid var(--azul-oscuro);
+  font-size: var(--letra--tamaño--pequeña);
+  width: 420px;
+  height: 55px;
 }
 .register__input:focus{
-  border: solid var(--border-ancho) var(--azul-oscuro);
+  outline: none;
+  border: 4px solid var(--azul-oscuro);
+  border-radius: 8px;
 }
 option{
   font-size: 1rem;
@@ -94,11 +96,24 @@ option{
   background-color: var(--azul-medio);
   color: var(--color-blanco);
 }
+
 .error{
-  color: var(--color-rojo);
-  border: solid var(--border-input) var(--color-rojo);
+  border-bottom: solid var(--border-ancho) var(--color-rojo);
+}
+.error:focus{
+  border: solid var(--border-ancho) var(--color-rojo);
   border-radius: var(--border-radius);
 }
 .error__icon{
   color: var(--color-rojo);
+}
+.bien{
+  border-bottom: solid var(--border-ancho) var(--color-verde);
+}
+.bien:focus{
+  border: solid var(--border-ancho) var(--color-verde);
+  border-radius: var(--border-radius);
+}
+.bien__icon{
+  color: var(--color-verde);
 }

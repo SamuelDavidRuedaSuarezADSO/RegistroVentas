@@ -1,16 +1,19 @@
-import { usuario } from "./modulo.js";
+import { usuario } from "../modulos/modulo.js";
+import { ver } from "../modulos/numeros.js";
+
 
 let linkHome = "src/home-venta.html";
 
 const $user = document.querySelector("#user");
 const $contra = document.querySelector("#contra");
 const $form = document.querySelector("#form");
-const $icon = document.querySelector(".login__icon");
-const $icon2 = document.querySelector("#candado");
+const $icon = document.querySelector(".icono");
 const $label = document.querySelector(".login__label");
 const $label2 = document.querySelector("#label");
 const $error = document.querySelector(".login__error");
 const $error2 = document.querySelector("#error");
+const $icon2 = document.querySelector("#candado");
+
 
 const validar = (event) => {
   event.preventDefault();
@@ -20,6 +23,7 @@ const validar = (event) => {
     alert("Rellene todos los campos")
   }
   else {
+    
     if(!isNaN(user)){    
       usuario()
         .then((r) => {
@@ -54,5 +58,23 @@ const validar = (event) => {
     }
   }
 }
+
+// const ver = (event)=>{
+//   // let regex = new RegExp("^[0-9]+$");
+//   let regex = /^[0-9]+$/;
+//   if (!regex.test(event.key) || $user.value.length >= 10) { 
+//     event.preventDefault();
+//     $user.classList.add("error");
+//     $icon.classList.add("error__icon");
+//   } else {
+//     $icon.classList.add("bien__icon");
+//     $user.classList.add("bien");
+//   }
+// }
+
+$user.addEventListener("keypress",  (event) => {
+  ver(event, $user, $icon)
+});
+
 
 $form.addEventListener('submit', validar)

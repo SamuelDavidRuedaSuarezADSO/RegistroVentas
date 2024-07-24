@@ -1,4 +1,5 @@
-import { usuario, register } from "./modulo.js";
+import { usuario, register } from "../modulos/modulo.js";
+import {ver} from "../modulos/numeros.js";
 
 let linkHome = "home-venta.html";
 
@@ -21,6 +22,10 @@ const $icon3 = document.querySelector(".icon3");
 const $icon4 = document.querySelector(".icon4");
 const $icon5 = document.querySelector(".icon5");
 const $icon6 = document.querySelector(".icon6");
+
+$dni.addEventListener("keypress", (event) => {
+    ver(event, $dni, $icon3)
+})
 
 
 const enviar = (event)=>{

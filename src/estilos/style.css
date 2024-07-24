@@ -118,8 +118,8 @@ main {
   border-color: var(--azul-oscuro);
 }
 
-.login__button--primary:hover {
-  background-color: var(--azul-medi-hover);
+.login__button--primary:hover{
+  background-color: var(--azul-medio);
 }
 
 .login__button--primary:active {
@@ -127,12 +127,5 @@ main {
   border-width: 3px;
   border-style: inset;
   border-color: var(--azul-oscuro);
-}
-.error{
-  border: solid var(--input-height) var(--color-rojo);
-  border-radius: var(--border-radius);
-}
-.error__icon{
-  color: var(--color-rojo);
 }
 

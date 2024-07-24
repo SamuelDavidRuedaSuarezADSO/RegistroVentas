@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos/users.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Venta Muebles HomeHouse - Usuarios</title>
+</head>
+
+<body>
+  <header>
+    <div class="home">
+      <button class="home__bars" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars home__icon"></i>
+      </button>
+      <div id="sidebar" class="sidebar">
+        <div>
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">
+            <button class="home__bars icon">
+              <i class="fa-solid fa-bars home__icon "></i>
+            </button>
+          </a>
+          <a href="home-venta.html" class="venta">Venta</a>
+          <a href="#">Muebles</a>
+          <a href="#">Categoria</a>
+          <a href="#">Pedidos</a>
+          <a href="#">Clientes</a>
+          <a href="#" class="user">Usuarios</a>
+        </div>
+        <div class="sidebar__last">
+          <a href="resgistro.html">Registrar Usuario</a>
+          <a href="../index.html">Cerrar Seción</a>
+        </div>
+      </div>
+      <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
+      <h1 class="home__title">USUARIOS</h1>
+    </div>
+  </header>
+  <main>
+    <section class="datos">
+      <form action="" class="datos__form" id="form">
+        <div class="form__users">
+          <label for="empleCod" class="user__label"><b>CODIGO DEL EMPLEADO:</b></label>
+          <input type="text" id="empleCod" name="empleCod" class="user__input" disabled>
+          <label for="empleNom" class="user__label"><b>NOMBRE DEL EMPLEADO:</b></label>
+          <input type="text" id="empleNom" name="empleNom" class="user__input">
+          <label for="empleLast" class="user__label"><b>APELLIDO DEL EMPLEADO:</b></label>
+          <input type="text" id="empleLast" name="empleLast" class="user__input">
+          <label for="codRol" class="user__label"><b>CODIGO DEL ROL:</b></label>
+          <select type="text" id="codRol" name="codRol" class="user__input">
+            <option value="pre">Selecione un rol....</option>
+          </select>
+          <label for="contraEmple" class="user__label"><b>CONTRASEÑA DEL EMPLEADO:</b></label>
+          <input type="text" id="contraEmple" name="contraEmple" class="user__input">
+        </div>
+        <button type="submit" id="envia" class="boton modi">Enviar</button>
+      </form>
+    </section>
+    <section class="search">
+      <form action="" class="search__form">
+        <input type="search" name="input" id="input" class="form__input" placeholder="Buscar por codigo....">
+        <button class="search__add" type="submit">Buscar</button>
+      </form>
+    </section>
+    <section class="table">
+      <table class="table__table">
+        <thead>
+          <tr class="table__body">
+            <th class="table__body th">ID</th>
+            <th class="table__body th">NOMBRE</th>
+            <th class="table__body th">APELLIDO</th>
+            <th class="table__body th">ROL</th>
+            <th class="table__body th">CONTRASEÑA</th>
+            <th class="table__body th">MOD.</th>
+          </tr>
+        </thead>
+        <tbody class="table__table table__table--body" id="tbody">          
+        </tbody>
+      </table>
+    </section>
+    <footer class="info">
+      <h3 class="info__copy">©2024 SamuelRueda. Todos los derechos reservador</h3>
+      <div class="info__fecha" id="fecha"></div>
+    </footer>
+  </main>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/user.js" type="module"></script>
+</body>
+
+</html>

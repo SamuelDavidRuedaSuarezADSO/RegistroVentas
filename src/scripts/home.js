@@ -1,4 +1,4 @@
-import { usuario , clientes } from "./modulo.js";
+import { usuario , clientes } from "../modulos/modulo.js";
 
 const $frag = document.createDocumentFragment();
 const $empleNom = document.querySelector("#empleNom");
@@ -17,7 +17,8 @@ function nombre(){
                   $option.textContent = "";
                 }
                 else {
-                  $option.textContent = e.nombre;
+                    let full = e.nombre + " " + e.apellido;
+                  $option.textContent =full;
                   $frag.appendChild($option);
                 }
               }
@@ -38,7 +39,8 @@ function cliente(){
               if (e.rol != "1") {  
                 const $option = document.createElement("option");
                 $option.setAttribute("value", e.id)
-                $option.textContent = e.nombre;
+                let full = e.nombre + " " + e.apellido;
+                $option.textContent = full;
                 $frag.appendChild($option);
               }
             });
