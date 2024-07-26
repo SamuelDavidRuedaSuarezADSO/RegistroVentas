@@ -27,22 +27,29 @@
       "apellido": "Pabon",
       "password": "123",
       "rol": "3"
+    },
+    {
+      "id": "1102354168",
+      "nombre": "carlos",
+      "apellido": "garcia",
+      "password": "carlos",
+      "rol": "2"
     }
   ],
   "clientes": [
     {
-      "id": "9887654",
-      "nombre": "Pedro",
-      "apellido": "perez",
-      "telefono": 31231231,
-      "email": "pedroperez@gmail.com"
+      "id": "1102714658",
+      "nombre": "prueba",
+      "apellido": "Suarez",
+      "telefono": "3333333333",
+      "email": "prueba@gmail.com"
     },
     {
-      "id": "23444444",
-      "nombre": "maria",
-      "apellido": "duarte",
-      "telefono": 315456776,
-      "email": "mariaduarte@gmail.com"
+      "id": "1102714652",
+      "nombre": "prueba",
+      "apellido": "Suarez",
+      "telefono": "3333333333",
+      "email": "prueba@gmail.com"
     }
   ]
 }

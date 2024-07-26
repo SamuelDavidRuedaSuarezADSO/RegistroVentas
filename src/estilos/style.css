@@ -128,4 +128,26 @@ main {
   border-style: inset;
   border-color: var(--azul-oscuro);
 }
-
+.error{
+  border: none;
+  border-bottom: solid var(--border-ancho) var(--color-rojo);
+}
+.error:focus{
+  border: solid var(--border-ancho) var(--color-rojo);
+  border-radius: var(--border-radius);
+}
+.error__icon{
+  color: var(--color-rojo);
+}
+.bien{
+  border: none;
+  border-bottom: solid var(--border-ancho) var(--color-verde);
+}
+.bien:focus{
+  border: none;
+  border: solid var(--border-ancho) var(--color-verde);
+  border-radius: var(--border-radius);
+}
+.bien__icon{
+  color: var(--color-verde);
+}
