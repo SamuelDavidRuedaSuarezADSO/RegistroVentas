@@ -15,32 +15,11 @@
   ],
   "usuarios": [
     {
-      "id": "1",
       "nombre": "admin",
-      "apellido": "admin",
+      "apellido": "admin2",
       "password": "admin",
-      "rol": "1"
-    },
-    {
-      "id": "213456789",
-      "nombre": "juan",
-      "apellido": "rueda",
-      "password": "12345",
-      "rol": "2"
-    },
-    {
-      "id": "123456",
-      "nombre": "Pedro",
-      "apellido": "Infante",
-      "password": "123456",
-      "rol": "2"
-    },
-    {
-      "id": "1102714658",
-      "nombre": "Samuel",
-      "apellido": "Rueda",
-      "password": "12345",
-      "rol": "3"
+      "rol": "1",
+      "id": "1"
     },
     {
       "id": "0987654322",
