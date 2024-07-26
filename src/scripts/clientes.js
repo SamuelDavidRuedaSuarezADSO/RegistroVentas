@@ -151,7 +151,6 @@ $modi.addEventListener("click", (event)=>{
         .catch((error)=>{
             console.error("ERROR", error);
         })
-
 })
 
 $delte.addEventListener("click", (event)=>{
