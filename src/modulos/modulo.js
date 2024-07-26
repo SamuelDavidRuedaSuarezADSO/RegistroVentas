@@ -51,3 +51,9 @@ export const listRol = async () =>{
   const data = await response.json();
   return data;
 }
+
+export const buscarUsuario = async (id) =>{
+  const data = await fetch(`http://127.0.0.1:3000/usuarios/${id}`)
+  const info = await data.json();
+  return info;
+}

@@ -134,6 +134,7 @@ main {
   align-self: center;
 }
 .user__input {
+  background-color: var(--color-blanco);
   width: 400px;
   height: var(--height-input);
   padding: var(--padding);
@@ -329,7 +330,7 @@ thead{
     height: 40px;
 }
 .modi{
-    background-color: var(--blanco-hover);
+    background-color: var(--azul-hover);
 }
 .modi:hover{
     background-color: var(--azul-principal);
@@ -353,4 +354,9 @@ thead{
 }
 .info__copy {
   font-size: var(--letra--tamaño--pequeña);
+}
+.form__buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
