@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos/users.css">
+  <link rel="stylesheet" href="estilos/client.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,8 +28,8 @@
           <a href="#">Muebles</a>
           <a href="#">Categoria</a>
           <a href="#">Pedidos</a>
-          <a href="clientes.html">Clientes</a>
-          <a href="#" class="user">Usuarios</a>
+          <a href="#" class="client">Clientes</a>
+          <a href="usuarios.html" class="user">Usuarios</a>
         </div>
         <div class="sidebar__last">
           <a href="resgistro.html">Registrar Usuario</a>
@@ -37,34 +37,36 @@
         </div>
       </div>
       <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
-      <h1 class="home__title">USUARIOS</h1>
+      <h1 class="home__title">CLIENTES</h1>
     </div>
   </header>
   <main>
     <section class="datos">
+        <div class="datos__img"></div>
+        <!-- <img src="#" alt="" class="datos__img"> -->
       <form action="" class="datos__form" id="form">
         <div class="form__users">
-          <label for="empleCod" class="user__label"><b>CODIGO DEL EMPLEADO:</b></label>
-          <input type="text" id="empleCod" name="empleCod" class="user__input" disabled>
-          <label for="empleNom" class="user__label"><b>NOMBRE DEL EMPLEADO:</b></label>
-          <input type="text" id="empleNom" name="empleNom" class="user__input">
-          <label for="empleLast" class="user__label"><b>APELLIDO DEL EMPLEADO:</b></label>
-          <input type="text" id="empleLast" name="empleLast" class="user__input">
-          <label for="contraEmple" class="user__label"><b>CONTRASEÑA DEL EMPLEADO:</b></label>
-          <input type="text" id="contraEmple" name="contraEmple" class="user__input">
-          <label for="codRol" class="user__label"><b>CODIGO DEL ROL:</b></label>
-          <select type="text" id="codRol" name="codRol" class="user__input">
-            <option value="pre">Selecione un rol....</option>
-          </select>
+          <label for="clientCod" class="user__label"><b>CODIGO DEL CLIETNTE:</b></label>
+          <input type="text" id="clientCod" name="clientCod" class="user__input">
+          <label for="clientNom" class="user__label"><b>NOMBRE DEL CLIETNTE:</b></label>
+          <input type="text" id="clientNom" name="clientNom" class="user__input">
+          <label for="clientLast" class="user__label"><b>APELLIDO DEL CLIETNTE:</b></label>
+          <input type="text" id="clientLast" name="clientLast" class="user__input">
+          <label for="clientNum" class="user__label"><b>TELEFONO DEL CLIETNTE:</b></label>
+          <input type="text" id="clientNum" name="clientNum" class="user__input">
+          <label for="clientEmail" class="user__label"><b>EMAIL DEL CLIETNTE:</b></label>
+          <input type="text" id="clientEmail" name="clientEmail" class="user__input">
+          <div class="form__hide"></div>
+          <div class="form__buttons">
+              <button type="submit" id="guardar" class="boton save"><b>GUARDAR</b></button>
+              <button type="button" id="modi" class="boton modi"><b>MODIFICAR</b></button>
+              <button type="button" id="delete" class="boton delete"><b>ELIMINAR</b></button>
+          </div>
         </div>
-        <fiv class="form__buttons">
-          <button type="submit" id="envia" class="boton modi"><b>MODIFICAR</b></button>
-          <button type="button" id="eliminar" class="boton modi"><b>ELIMINAR</b></button>
-        </fiv>
       </form>
     </section>
     <section class="search">
-      <form action="" class="search__form" id="search">
+      <form action="" class="search__form">
         <input type="search" name="input" id="input" class="form__input" placeholder="Buscar por codigo....">
         <button class="search__add" type="submit">Buscar</button>
       </form>
@@ -76,8 +78,8 @@
             <th class="table__body th">ID</th>
             <th class="table__body th">NOMBRE</th>
             <th class="table__body th">APELLIDO</th>
-            <th class="table__body th">ID - ROL</th>
-            <th class="table__body th">CONTRASEÑA</th>
+            <th class="table__body th">TELEFONO</th>
+            <th class="table__body th">EMAIL</th>
             <th class="table__body th">MOD.</th>
           </tr>
         </thead>
@@ -91,7 +93,7 @@
     </footer>
   </main>
   <script src="scripts/main.js"></script>
-  <script src="scripts/user.js" type="module"></script>
+  <script src="scripts/clientes.js" type="module"></script>
 </body>
 
 </html>

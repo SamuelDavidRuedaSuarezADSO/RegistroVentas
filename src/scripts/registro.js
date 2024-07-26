@@ -1,5 +1,5 @@
 import { usuario, register } from "../modulos/modulo.js";
-import {ver} from "../modulos/numeros.js";
+import {soloNumeros} from "../modulos/numeros.js";
 
 let linkHome = "home-venta.html";
 
@@ -24,7 +24,7 @@ const $icon5 = document.querySelector(".icon5");
 const $icon6 = document.querySelector(".icon6");
 
 $dni.addEventListener("keypress", (event) => {
-    ver(event, $dni, $icon3)
+    soloNumeros(event, $dni, $icon3)
 })
 
 

@@ -18,20 +18,20 @@
   <main>
     <section class="login">
       <h1 class="login__title">Inicio de Sesión</h1>
-      <form action="#" class="login__form" id="form">
+      <form action="#" class="login__form" id="form" novalidate>
         <div class="login__input-group">
           <label for="user" class="login__label">Documento:</label>
           <div class="login__input-wrapper">
             <i class="fa-solid fa-user login__icon icono"></i>
-            <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." autocomplete="off"/>
+            <input type="text" id="user" class="login__input" placeholder="Ingresa tu usuario..." autocomplete="off" required/>
           </div>
-          <p class="login__error">El documento no Existe</p>
+          <p class="login__error">El documento no es valido</p>
         </div>
         <div class="login__input-group">
           <label for="contra" class="login__label" id="label">Contraseña:</label>
           <div class="login__input-wrapper">
             <i class="fa-solid fa-lock login__icon" id="candado"></i>
-            <input type="password" id="contra" class="login__input input" placeholder="Ingresa tu contraseña..." autocomplete="off"/>
+            <input type="password" id="contra" class="login__input input" placeholder="Ingresa tu contraseña..." autocomplete="off" required/>
           </div>
           <p class="login__error" id="error">Contraseña incorrecta</p>
         </div>

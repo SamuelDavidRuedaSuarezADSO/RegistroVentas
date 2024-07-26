@@ -1,4 +1,4 @@
-export const ver = (event, element, element2)=>{
+export const soloNumeros = (event, element, element2)=>{
     let regex = /^[0-9]+$/;
     if(element.value.length >= 10){
       event.preventDefault();
