@@ -51,3 +51,48 @@ export const listRol = async () =>{
   const data = await response.json();
   return data;
 }
+
+export const buscarUsuario = async (id) => {
+  const data = await fetch(`http://127.0.0.1:3000/usuarios/${id}`)
+  const info = await data.json();
+  return info;
+}
+
+export const eliminarCliente = async (id)=>{
+  fetch(`http://127.0.0.1:3000/clientes/${id}`, {
+    method: 'DELETE',
+  });
+}
+
+export const modificarCliente = async (data, id) =>{
+  fetch(`http://127.0.0.1:3000/clientes/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}
+
+export const registerCliente = async (data) =>{
+  fetch('http://127.0.0.1:3000/clientes', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+}
+
+export const clientesBuscar = async (id) => {
+  const response = await fetch(`http://127.0.0.1:3000/clientes?id=${id}`);
+  const data = await response.json();
+  if(data.length > 0){
+    return false;
+  }
+  return true;
+}

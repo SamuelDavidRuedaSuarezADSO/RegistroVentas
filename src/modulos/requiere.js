@@ -8,7 +8,7 @@ const requidos = (event, form)=>{
             element.classList.remove("bien");
             verdad = false;
         }
-    })
+    })     
     return verdad;  
 }
 export default requidos;

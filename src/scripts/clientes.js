@@ -14,6 +14,14 @@ const $email = document.querySelector("#clientEmail");
 const $delte = document.querySelector("#delete");
 const $modi = document.querySelector("#modi");
 
+function limpiar(){
+  $dni.value = "";
+  $name.value = "";
+  $last.value = "";
+  $num.value = "";
+  $email.value = "";
+}
+
 const list = () =>{
     clientes()
         .then((e)=>{
@@ -60,7 +68,7 @@ const list = () =>{
 
                 drop.addEventListener("click", ()=>{
                     eliminarCliente(dni)
-                    location.reload();
+                  limpiar();
                 })
                 
                 tr.appendChild(id);
@@ -73,8 +81,6 @@ const list = () =>{
                 tr.appendChild(botones)
                 $frag.appendChild(tr);
                 $table.appendChild($frag);
-
-                // console.log(contra.textContent)
 
                 modi.addEventListener("click", (event)=>{
                     event.preventDefault();
@@ -105,7 +111,8 @@ const enviar = (event)=>{
                 telefono: $num.value,
                 email: $email.value
                 }
-            registerCliente(datos);
+              registerCliente(datos);
+              limpiar();
             }
             else{
                 alert("ERROR: El CLIENTE ya existe");
@@ -137,7 +144,8 @@ $modi.addEventListener("click", (event)=>{
                             telefono: $num.value,
                             email: $email.value
                         }
-                        modificarCliente(datos, $dni.value);
+                      modificarCliente(datos, $dni.value);
+                      limpiar();
                     }
                     else{
                         alert("ERROR: SELECCIONE UN CLIENTE");
@@ -156,7 +164,8 @@ $modi.addEventListener("click", (event)=>{
 $delte.addEventListener("click", (event)=>{
     event.preventDefault();
     if($dni.value != "" && $name.value != "" && $last.value != "" && $num.value != "" && $email.value != ""){
-        eliminarCliente($dni.value);
+      eliminarCliente($dni.value);
+      limpiar();
     }
     else{
         alert("ERROR: SELECCIONE UN CLIENTE");

@@ -39,17 +39,10 @@
   "clientes": [
     {
       "id": "1102714658",
-      "nombre": "prueba",
-      "apellido": "Suarez",
-      "telefono": "3333333333",
-      "email": "prueba@gmail.com"
-    },
-    {
-      "id": "1102714652",
-      "nombre": "prueba",
-      "apellido": "Suarez",
-      "telefono": "3333333333",
-      "email": "prueba@gmail.com"
+      "nombre": "Samuel",
+      "apellido": "Rueda",
+      "telefono": "3012104176",
+      "email": "samuelrueda@gmail.com"
     }
   ]
 }
