@@ -50,18 +50,21 @@
           <input type="text" id="empleNom" name="empleNom" class="user__input">
           <label for="empleLast" class="user__label"><b>APELLIDO DEL EMPLEADO:</b></label>
           <input type="text" id="empleLast" name="empleLast" class="user__input">
+          <label for="contraEmple" class="user__label"><b>CONTRASEÑA DEL EMPLEADO:</b></label>
+          <input type="text" id="contraEmple" name="contraEmple" class="user__input">
           <label for="codRol" class="user__label"><b>CODIGO DEL ROL:</b></label>
           <select type="text" id="codRol" name="codRol" class="user__input">
             <option value="pre">Selecione un rol....</option>
           </select>
-          <label for="contraEmple" class="user__label"><b>CONTRASEÑA DEL EMPLEADO:</b></label>
-          <input type="text" id="contraEmple" name="contraEmple" class="user__input">
         </div>
-        <button type="submit" id="envia" class="boton modi">Enviar</button>
+        <fiv class="form__buttons">
+          <button type="submit" id="envia" class="boton modi"><b>MODIFICAR</b></button>
+          <button type="button" id="eliminar" class="boton modi"><b>ELIMINAR</b></button>
+        </fiv>
       </form>
     </section>
     <section class="search">
-      <form action="" class="search__form">
+      <form action="" class="search__form" id="search">
         <input type="search" name="input" id="input" class="form__input" placeholder="Buscar por codigo....">
         <button class="search__add" type="submit">Buscar</button>
       </form>
@@ -73,7 +76,7 @@
             <th class="table__body th">ID</th>
             <th class="table__body th">NOMBRE</th>
             <th class="table__body th">APELLIDO</th>
-            <th class="table__body th">ROL</th>
+            <th class="table__body th">ID - ROL</th>
             <th class="table__body th">CONTRASEÑA</th>
             <th class="table__body th">MOD.</th>
           </tr>

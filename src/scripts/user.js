@@ -1,4 +1,4 @@
-import { usuario, rol, eliminar, modificar, listRol } from "../modulos/modulo.js";
+import { usuario, rol, eliminar, modificar, listRol, buscarUsuario } from "../modulos/modulo.js";
 
 const $table = document.querySelector("#tbody");
 const $frag = document.createDocumentFragment();
@@ -10,6 +10,11 @@ const $name = document.querySelector("#empleNom");
 const $last = document.querySelector("#empleLast");
 const $rol = document.querySelector("#codRol");
 const $contra = document.querySelector("#contraEmple");
+const $elimi = document.querySelector("#eliminar");
+
+const $search = document.querySelector("#search");
+const $input = document.querySelector("#input");
+
 
 const roles = ()=>{
     listRol()
@@ -27,7 +32,8 @@ roles();
 const list = () =>{
     usuario()
         .then((e)=>{
-            e.forEach((x)=>{
+          e.forEach((x) => {
+                let idrol;
                 const tr = document.createElement("tr");
                 const id = document.createElement("td");
                 const name = document.createElement("td");
@@ -69,12 +75,17 @@ const list = () =>{
 
                 rol(x.rol)
                     .then((h)=>{
-                        adm.textContent = h.name;
+                      adm.textContent = h.id + " - " + h.name;
+                      idrol = h.id;
                     })
 
                 drop.addEventListener("click", ()=>{
-                    eliminar(dni)
-                    location.reload();
+                  eliminar(dni)
+                  $dni.value = "";
+                  $name.value = "";
+                  $last.value = "";
+                  $contra.value = "";
+                  $rol.value = "pre";
                 })
                 
                 tr.appendChild(id);
@@ -88,7 +99,6 @@ const list = () =>{
                 $frag.appendChild(tr);
                 $table.appendChild($frag);
 
-                // console.log(contra.textContent)
 
                 modi.addEventListener("click", (event)=>{
                     event.preventDefault();
@@ -96,6 +106,7 @@ const list = () =>{
                     $name.value = name.textContent;
                     $last.value = last.textContent;
                     $contra.value = contra.textContent;
+                    $rol.value = idrol;
                 })            
             })
         })
@@ -103,7 +114,83 @@ const list = () =>{
 
 list();
 
-const modi = () =>{
+const modi = (event) => {
+  event.preventDefault();
+  if ($dni.value != "" || $name.value != "" || $last.value != "" || $contra.value != "") {
+    if ($rol.value != "pre") {
+
+      const datos = {
+        nombre: $name.value,
+        apellido: $last.value,
+        password: $contra.value,
+        rol: $rol.value
+      }
+      
+      modificar(datos, $dni.value);
+
+      $dni.value = "";
+      $name.value = "";
+      $last.value = "";
+      $contra.value = "";
+      $rol.value = "pre";
+
+      
+
+    } else {
+      alert("ERROR: Seleccione un rol");
+    }
+  } else {
+    alert("ERROR: Seleccione un USUARIO");
+  }
+}
+// modi();
+$form.addEventListener("submit", modi);
+
+
+$elimi.addEventListener("click", () => {
+  if ($dni.value != "" || $name.value != "" || $last.value != "" || $contra.value != "") {
+    if ($rol.value != "pre") {      
+      eliminar($dni.value)
+      $dni.value = "";
+      $name.value = "";
+      $last.value = "";
+      $contra.value = "";
+      $rol.value = "pre";
+    }else {
+      alert("ERROR: Seleccione un rol");
+    }
+  }else {
+    alert("ERROR: Seleccione un USUARIO");
+  }
+})
+
+const busqueda = (event) => {
+  event.preventDefault();
+
+  $dni.value = "";
+  $name.value = "";
+  $last.value = "";
+  $contra.value = "";
+  $rol.value = "pre";
+
+  if ($input.value != "") {
+    buscarUsuario($input.value)
+      .then((g) => {
+        $dni.value = g.id;
+        $name.value = g.nombre;
+        $last.value = g.apellido;
+        $contra.value = g.password;
+        $rol.value = g.rol;
+      })
+      .catch((error) => {
+        console.error("ERROR: ", error);
+          alert("ERROR: No se encontro ningun usuario")
+      })
+  }
+  else {
+    alert("ERROR: No se ingreso nada en el buscador")
+  }
 
 }
-$form
+
+$search.addEventListener("submit", busqueda)
