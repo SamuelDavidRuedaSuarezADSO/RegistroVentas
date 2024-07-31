@@ -1,4 +1,4 @@
-import { usuario, rol, eliminar, modificar, listRol, buscarUsuario } from "../modulos/modulo.js";
+import { listar, buscar, eliminar, modificar } from "../modulos/modulo.js";
 
 const $table = document.querySelector("#tbody");
 const $frag = document.createDocumentFragment();
@@ -15,9 +15,17 @@ const $elimi = document.querySelector("#eliminar");
 const $search = document.querySelector("#search");
 const $input = document.querySelector("#input");
 
+function limpiar(){
+  $dni.value = "";
+  $name.value = "";
+  $last.value = "";
+  $contra.value = "";
+  $rol.value = "pre";
+}
+
 
 const roles = ()=>{
-    listRol()
+    listar(`roles`)
         .then((f)=>{
             f.forEach((s)=>{
                     const op = document.createElement("option");
@@ -30,7 +38,7 @@ const roles = ()=>{
 }
 roles();
 const list = () =>{
-    usuario()
+    listar(`usuarios`)
         .then((e)=>{
           e.forEach((x) => {
                 let idrol;
@@ -73,19 +81,15 @@ const list = () =>{
 
                 let dni = x.id;
 
-                rol(x.rol)
+                buscar(x.rol, `roles`)
                     .then((h)=>{
                       adm.textContent = h.id + " - " + h.name;
                       idrol = h.id;
                     })
 
                 drop.addEventListener("click", ()=>{
-                  eliminar(dni)
-                  $dni.value = "";
-                  $name.value = "";
-                  $last.value = "";
-                  $contra.value = "";
-                  $rol.value = "pre";
+                  eliminar(dni, `usuarios`)
+                  limpiar();
                 })
                 
                 tr.appendChild(id);
@@ -126,13 +130,9 @@ const modi = (event) => {
         rol: $rol.value
       }
       
-      modificar(datos, $dni.value);
+      modificar($dni.value, datos, `usuarios`);
 
-      $dni.value = "";
-      $name.value = "";
-      $last.value = "";
-      $contra.value = "";
-      $rol.value = "pre";
+      limpiar();
 
       
 
@@ -143,19 +143,15 @@ const modi = (event) => {
     alert("ERROR: Seleccione un USUARIO");
   }
 }
-// modi();
+
 $form.addEventListener("submit", modi);
 
 
 $elimi.addEventListener("click", () => {
   if ($dni.value != "" || $name.value != "" || $last.value != "" || $contra.value != "") {
     if ($rol.value != "pre") {      
-      eliminar($dni.value)
-      $dni.value = "";
-      $name.value = "";
-      $last.value = "";
-      $contra.value = "";
-      $rol.value = "pre";
+      eliminar($dni.value, `usuarios`)
+      limpiar();
     }else {
       alert("ERROR: Seleccione un rol");
     }
@@ -167,14 +163,10 @@ $elimi.addEventListener("click", () => {
 const busqueda = (event) => {
   event.preventDefault();
 
-  $dni.value = "";
-  $name.value = "";
-  $last.value = "";
-  $contra.value = "";
-  $rol.value = "pre";
+  limpiar();
 
   if ($input.value != "") {
-    buscarUsuario($input.value)
+    buscar($input.value, `usuarios`)
       .then((g) => {
         $dni.value = g.id;
         $name.value = g.nombre;
@@ -193,4 +185,4 @@ const busqueda = (event) => {
 
 }
 
-$search.addEventListener("submit", busqueda)
+$search.addEventListener("submit", busqueda);

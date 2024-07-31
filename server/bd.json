@@ -38,11 +38,30 @@
   ],
   "clientes": [
     {
+      "id": "9898123",
+      "nombre": "Pedro",
+      "apellido": "Duarte",
+      "telefono": "123123123",
+      "email": "pedro@gmail.com"
+    },
+    {
       "id": "1102714658",
       "nombre": "Samuel",
       "apellido": "Rueda",
       "telefono": "3012104176",
       "email": "samuelrueda@gmail.com"
+    }
+  ],
+  "categoria": [
+    {
+      "id": "1",
+      "nombre": "duchas",
+      "zona": "baños"
+    },
+    {
+      "id": "2",
+      "nombre": "cama",
+      "zona": "dormitorio"
     }
   ]
 }

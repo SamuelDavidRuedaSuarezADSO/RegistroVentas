@@ -20,40 +20,40 @@
   <main>
     <section class="register">
       <h1 class="register__title">Registrate</h1>
-      <form action="#" class="register__form" id="form">
+      <form action="#" class="register__form" id="form" novalidate>
         <div class="register__input-group">
           <label for="dni" class="register__label">Documento de identidad:</label>
           <div class="register__input-wrapper">
             <i class="fa-solid fa-id-card register__icon id icon3"></i>
-            <input type="text" id="dni" class="register__input" placeholder="Escribe tu documento..." autocomplete="off"/>
+            <input type="text" id="dni" class="register__input" placeholder="Escribe tu documento..." autocomplete="off" required/>
           </div>
         </div>
         <div class="register__input-group">
           <label for="user" class="register__label">Nombre del Usuario:</label>
           <div class="register__input-wrapper">
             <i class="fa-solid fa-user register__icon icon"></i>
-            <input type="text" name="user" id="user" class="register__input" placeholder="Crea tu nombre de Usuario..." autocomplete="off"/>
+            <input type="text" name="user" id="user" class="register__input" placeholder="Crea tu nombre de Usuario..." autocomplete="off" required/>
           </div>
         </div>
         <div class="register__input-group">
           <label for="last" class="register__label">Apellido del Usuario:</label>
           <div class="register__input-wrapper">
             <i class="fa-solid fa-user register__icon icon2"></i>
-            <input type="text" name="last" id="last" class="register__input" placeholder="Crea tu nombre de Usuario..." autocomplete="off"/>
+            <input type="text" name="last" id="last" class="register__input" placeholder="Crea tu nombre de Usuario..." autocomplete="off" required/>
           </div>
         </div>
         <div class="register__input-group">
           <label for="contra" class="register__label">Contraseña:</label>
           <div class="register__input-wrapper">
             <i class="fa-solid fa-lock register__icon icon4"></i>
-            <input type="password" id="contra" class="register__input" placeholder="Crea tu contraseña..." autocomplete="off"/>
+            <input type="password" id="contra" class="register__input" placeholder="Crea tu contraseña..." autocomplete="off" required/>
           </div>
         </div>
         <div class="register__input-group">
           <label for="contraC" class="register__label">Repite la Contraseña:</label>
           <div class="register__input-wrapper">
             <i class="fa-solid fa-shield register__icon icon5"></i>
-            <input type="password" id="contraC" class="register__input" placeholder="Repite tu contraseña..." autocomplete="off"/>
+            <input type="password" id="contraC" class="register__input" placeholder="Repite tu contraseña..." autocomplete="off" required/>
           </div>
         </div>
         <div class="register__input-group roles">

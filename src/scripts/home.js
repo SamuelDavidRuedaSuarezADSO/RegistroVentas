@@ -1,4 +1,4 @@
-import { usuario , clientes } from "../modulos/modulo.js";
+import { buscar, eliminar, modificar, listar, registrar } from "../modulos/modulo.js";
 
 const $frag = document.createDocumentFragment();
 const $empleNom = document.querySelector("#empleNom");
@@ -6,8 +6,20 @@ const $empleCod = document.querySelector("#empleCod");
 const $clienNom = document.querySelector("#clienNom");
 const $clienCod = document.querySelector("#clienCod");
 
-function nombre(){
-    usuario()
+const $cod = document.querySelector("#Cod");
+const $nom = document.querySelector("#Nom");
+const $categ = document.querySelector("#Categ");
+const $cant = document.querySelector("#Cant");
+
+function limpiar(){
+  $cod.value = "";
+  $nom.value = "";
+  $categ.value = "";
+  $cant.value = "";
+}
+
+function empleado(){
+    listar(`usuarios`)
         .then((x)=>{
           x.forEach((e) => {
               if (e.rol != "1") {  
@@ -17,7 +29,7 @@ function nombre(){
                   $option.textContent = "";
                 }
                 else {
-                    let full = e.nombre + " " + e.apellido;
+                  let full = e.nombre + " " + e.apellido;
                   $option.textContent =full;
                   $frag.appendChild($option);
                 }
@@ -30,10 +42,10 @@ $empleNom.addEventListener("change", () => {
     const selecion = $empleNom.options[$empleNom.selectedIndex];
     $empleCod.value = selecion.value;
 });
-nombre();
+empleado();
 
 function cliente(){
-    clientes()
+    listar(`clientes`)
         .then((x)=>{
           x.forEach((e) => {
               if (e.rol != "1") {  
@@ -52,3 +64,6 @@ $clienNom.addEventListener("change", () => {
     $clienCod.value = seleccion.value;
 });
 cliente();
+
+
+

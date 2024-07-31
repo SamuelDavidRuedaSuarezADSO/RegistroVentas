@@ -1,14 +1,11 @@
-import { usuario, register } from "../modulos/modulo.js";
+import { registrar, listar } from "../modulos/modulo.js";
 import {soloNumeros} from "../modulos/numeros.js";
+import requeridos from "../modulos/requiere.js"
 
 let linkHome = "home-venta.html";
 
+
 const $cancelar = document.querySelector("#cancelar");
-
-$cancelar.addEventListener("click", function (){
-    location.href = linkHome;
-})
-
 const $form = document.querySelector("#form");
 const $user = document.querySelector("#user");
 const $last = document.querySelector("#last");
@@ -23,71 +20,77 @@ const $icon4 = document.querySelector(".icon4");
 const $icon5 = document.querySelector(".icon5");
 const $icon6 = document.querySelector(".icon6");
 
+function error(){
+    $dni.classList.add("error");
+    $icon3.classList.add("error__icon");
+    $user.classList.add("error");
+    $icon.classList.add("error__icon");
+    $last.classList.add("error");
+    $icon2.classList.add("error__icon");
+    $contra.classList.add("error");
+    $contraC.classList.add("error");
+    $icon4.classList.add("error__icon");
+    $icon5.classList.add("error__icon");
+    $rol.classList.add("error");
+    $icon6.classList.add("error__icon");
+}
+
+function limpiar(){
+    $dni.value = "";
+    $user.value = "";
+    $last.value = "";
+    $contra.value = "";
+    $contraC.value = "";
+    $rol.value = "pre";
+}
+
 $dni.addEventListener("keypress", (event) => {
     soloNumeros(event, $dni, $icon3)
 })
 
+$cancelar.addEventListener("click", function (){
+    location.href = linkHome;
+})
 
-const enviar = (event)=>{
+$form.addEventListener("submit", (event)=>{
     event.preventDefault();
-    let dni = $dni.value.trim();
-    let user = $user.value.trim();
-    let last = $last.value.trim();
-    let contra = $contra.value.trim();
-    let contraC = $contraC.value.trim();
-    let rol = $rol.value.trim();
-
-    if(dni == "" ||user == "" || last == "" || contra == "" || contraC == "" ){
-        alert("ERROR: Todos los campos son obligatorios");
-    }
-    else{
-        if(!isNaN(dni)){
-            if(isNaN(user)){
-                if(isNaN(last)){
-                    if(contra == contraC){
-                        if(rol != "pre"){
-                            const datos = {
-                                id: dni,
-                                nombre: user,
-                                apellido: last,
-                                password: contra,
-                                rol: rol
-                            }
-                            alert("Usuario ingresado correctamente");
-                            register(datos);
-                        }
-                        else{
-                            alert("ERROR: Seleccion un ROL");
-                            $rol.classList.add("error");
-                            $icon6.classList.add("error__icon");
-                        }
+    let resp = requeridos(event, "#form [required]");
+    let existe = false;
+    if(resp){
+        if($rol.value != "pre"){
+            listar(`usuarios`)
+                .then((x)=>{              
+                    x.forEach((a)=>{
+                        if($dni.value === a.id){
+                            existe = true;
+                        }  
+                    })
+                    if(existe){
+                        alert("ERROR: este USUARIO ya existe");
+                        error();
                     }
                     else{
-                        alert("ERROR: Las CONTRASEÑAS no coiciden")
-                        $contra.classList.add("error");
-                        $contraC.classList.add("error");
-                        $icon4.classList.add("error__icon");
-                        $icon5.classList.add("error__icon");
-                    }
-                }
-                else{
-                    alert("ERROR: El APELLIDO no es valido");
-                    $last.classList.add("error");
-                    $icon2.classList.add("error__icon");
-                }
+                        const datos = {
+                            id: $dni.value,
+                            nombre: $user.value,
+                            apellido: $last.value,
+                            password: $contra.value,
+                            rol: $rol.value
+                        }
+                        alert("Usuario ingresado correctamente");
+                        registrar(datos, `usuarios`);
+                        limpiar();
+                    }     
+                })
             }
             else{
-                alert("ERROR: El USUARIO no es valido");
-                $user.classList.add("error");
-                $icon.classList.add("error__icon");
+                alert("ERROR: Seleccione un ROL");
+                $rol.classList.add("error");
+                $icon6.classList.add("error__icon");
             }
         }
-        else{
-            alert("ERROR: El DOCUMENTO no es valido");
-            $dni.classList.add("error");
-            $icon3.classList.add("error__icon");
-        }
+    else{
+        error();
     }
-}
+});
 
-$form.addEventListener("submit", enviar);

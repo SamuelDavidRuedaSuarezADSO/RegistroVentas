@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos/client.css">
+  <link rel="stylesheet" href="estilos/categoria.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,9 +26,9 @@
           </a>
           <a href="home-venta.html" class="venta">Venta</a>
           <a href="#">Muebles</a>
-          <a href="categoria.html">Categoria</a>
+          <a href="#" class="categ">Categoria</a>
           <a href="#">Pedidos</a>
-          <a href="#" class="client">Clientes</a>
+          <a href="clientes.html" class="client">Clientes</a>
           <a href="usuarios.html" class="user">Usuarios</a>
         </div>
         <div class="sidebar__last">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
-      <h1 class="home__title">CLIENTES</h1>
+      <h1 class="home__title">CATEGORIAS</h1>
     </div>
   </header>
   <main>
@@ -46,16 +46,12 @@
         <!-- <img src="#" alt="" class="datos__img"> -->
       <form action="" class="datos__form" id="form" novalidate>
         <div class="form__users">
-          <label for="clientCod" class="user__label"><b>CODIGO DEL CLIETNTE:</b></label>
-          <input type="text" id="clientCod" name="clientCod" class="user__input" autocomplete="off" required>
-          <label for="clientNom" class="user__label"><b>NOMBRE DEL CLIETNTE:</b></label>
-          <input type="text" id="clientNom" name="clientNom" class="user__input" autocomplete="off" required>
-          <label for="clientLast" class="user__label"><b>APELLIDO DEL CLIETNTE:</b></label>
-          <input type="text" id="clientLast" name="clientLast" class="user__input" autocomplete="off" required>
-          <label for="clientNum" class="user__label"><b>TELEFONO DEL CLIETNTE:</b></label>
-          <input type="text" id="clientNum" name="clientNum" class="user__input" autocomplete="off" required>
-          <label for="clientEmail" class="user__label"><b>EMAIL DEL CLIETNTE:</b></label>
-          <input type="text" id="clientEmail" name="clientEmail" class="user__input" autocomplete="off" required>
+          <label for="codCateg" class="user__label"><b>CODIGO DE LA CATEGORIA:</b></label>
+          <input type="text" id="codCateg" name="codCateg" class="user__input" autocomplete="off" required>
+          <label for="nomCateg" class="user__label"><b>NOMBRE DE LA CATEGORIA:</b></label>
+          <input type="text" id="nomCateg" name="nomCateg" class="user__input" autocomplete="off" required>
+          <label for="zonCateg" class="user__label"><b>ZONA DE LA CATEGORIA:</b></label>
+          <input type="text" id="zonCateg" name="zonCateg" class="user__input" autocomplete="off" required>
           <div class="form__hide"></div>
           <div class="form__buttons">
               <button type="submit" id="guardar" class="boton save"><b>GUARDAR</b></button>
@@ -75,11 +71,9 @@
       <table class="table__table">
         <thead>
           <tr class="table__body">
-            <th class="table__body th">ID</th>
+            <th class="table__body th">CODIGO</th>
             <th class="table__body th">NOMBRE</th>
-            <th class="table__body th">APELLIDO</th>
-            <th class="table__body th">TELEFONO</th>
-            <th class="table__body th">EMAIL</th>
+            <th class="table__body th">ZONA</th>
             <th class="table__body th">MOD.</th>
           </tr>
         </thead>
@@ -93,7 +87,7 @@
     </footer>
   </main>
   <script src="scripts/main.js"></script>
-  <script src="scripts/clientes.js" type="module"></script>
+  <script src="scripts/categoria.js" type="module"></script>
 </body>
 
 </html>

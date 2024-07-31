@@ -1,4 +1,4 @@
-const requidos = (event, form)=>{
+const requeridos = (event, form)=>{
     event.preventDefault();
     let verdad = true;
     const cunsul = document.querySelectorAll(form)
@@ -11,4 +11,4 @@ const requidos = (event, form)=>{
     })     
     return verdad;  
 }
-export default requidos;
+export default requeridos;

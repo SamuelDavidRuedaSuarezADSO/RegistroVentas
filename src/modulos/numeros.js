@@ -1,6 +1,8 @@
 export const soloNumeros = (event, element, element2)=>{
     let regex = /^[0-9]+$/;
-    if(element.value.length >= 10){
+    let input = element.value;
+    console.log(input);
+    if(input.length >= 10){
       event.preventDefault();
     }
     else if (!regex.test(event.key)) { 

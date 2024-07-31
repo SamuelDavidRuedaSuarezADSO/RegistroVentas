@@ -1,6 +1,6 @@
-import { usuario } from "../modulos/modulo.js";
+import { listar } from "../modulos/modulo.js";
 import { soloNumeros } from "../modulos/numeros.js";
-import requidos from "../modulos/requiere.js"
+import requeridos from "../modulos/requiere.js"
 
 
 let linkHome = "src/home-venta.html";
@@ -32,9 +32,9 @@ $user.addEventListener("keypress",  (event) => {
 });
 
 $form.addEventListener('submit', (event)=>{
-  let resp = requidos(event, "#form [required]");
+  let resp = requeridos(event, "#form [required]");
   if (resp){
-    usuario()
+    listar(`usuarios`)
         .then((r) => {
           r.forEach((x) => {
             let user = $user.value.trim();
