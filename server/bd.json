@@ -17,7 +17,7 @@
     {
       "nombre": "admin",
       "apellido": "admin2",
-      "password": "admin",
+      "password": "123",
       "rol": "1",
       "id": "1"
     },
@@ -54,14 +54,25 @@
   ],
   "categoria": [
     {
-      "id": "1",
-      "nombre": "duchas",
-      "zona": "baños"
+      "nombre": "Camas",
+      "zona": "dormitorio",
+      "id": "2"
     },
     {
-      "id": "2",
-      "nombre": "cama",
-      "zona": "dormitorio"
+      "id": "1",
+      "nombre": "Regaderas",
+      "zona": "baños"
+    }
+  ],
+  "muebles": [
+    {
+      "id": "1",
+      "nombre": "Cama KingSize",
+      "cod_categ": "2",
+      "color": "Blanco",
+      "material": "Roble y Seda",
+      "precio": "3000000",
+      "stock": "5"
     }
   ]
 }

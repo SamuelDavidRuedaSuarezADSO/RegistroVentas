@@ -88,8 +88,11 @@ const list = () =>{
                     })
 
                 drop.addEventListener("click", ()=>{
-                  eliminar(dni, `usuarios`)
-                  limpiar();
+                  let confirmar = confirm("¿Esta seguro de ELIMINAR este usuario?")
+                  if(confirmar){
+                    eliminar(dni, `usuarios`)
+                    limpiar();
+                  }
                 })
                 
                 tr.appendChild(id);

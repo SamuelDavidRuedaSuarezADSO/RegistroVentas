@@ -1,4 +1,4 @@
-const URL = `http://127.0.0.1:3000/`;
+import { URL } from "../../config.js";
 
 export const registrar = async (data, direcc) =>{
   fetch(`${URL}${direcc}`, {
@@ -35,6 +35,7 @@ export const modificar = async (id, data, direcc)=>{
     .then((response) => response.json())
     .then((json) => console.log(json));
 }
+
 export const buscar = async(id, direcc)=>{
   const response = await fetch(`${URL}${direcc}/${id}`);
   const data = await response.json();

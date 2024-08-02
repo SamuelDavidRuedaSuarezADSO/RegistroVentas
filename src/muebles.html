@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos/categoria.css">
+  <link rel="stylesheet" href="estilos/muebles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,10 +25,10 @@
             </button>
           </a>
           <a href="home-venta.html" class="venta">Venta</a>
-          <a href="muebles.html">Muebles</a>
-          <a href="#" class="categ">Categoria</a>
+          <a href="#" class="mueble">Muebles</a>
+          <a href="categoria.html">Categoria</a>
           <a href="#">Pedidos</a>
-          <a href="clientes.html" class="client">Clientes</a>
+          <a href="muebles.html" class="client">Clientes</a>
           <a href="usuarios.html" class="user">Usuarios</a>
         </div>
         <div class="sidebar__last">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
-      <h1 class="home__title">CATEGORIAS</h1>
+      <h1 class="home__title">MUEBLES</h1>
     </div>
   </header>
   <main>
@@ -46,12 +46,22 @@
         <!-- <img src="#" alt="" class="datos__img"> -->
       <form action="" class="datos__form" id="form" novalidate>
         <div class="form__users">
-          <label for="codCateg" class="user__label"><b>CODIGO DE LA CATEGORIA:</b></label>
-          <input type="text" id="codCateg" name="codCateg" class="user__input" autocomplete="off" required>
-          <label for="nomCateg" class="user__label"><b>NOMBRE DE LA CATEGORIA:</b></label>
-          <input type="text" id="nomCateg" name="nomCateg" class="user__input" autocomplete="off" required>
-          <label for="zonCateg" class="user__label"><b>ZONA DE LA CATEGORIA:</b></label>
-          <input type="text" id="zonCateg" name="zonCateg" class="user__input" autocomplete="off" required>
+          <label for="codMueble" class="user__label"><b>CODIGO DEL MUEBLE:</b></label>
+          <input type="text" id="codMueble" name="codMueble" class="user__input" autocomplete="off" required>
+          <label for="nomMueble" class="user__label"><b>NOMBRE DEL MUEBLE:</b></label>
+          <input type="text" id="nomMueble" name="nomMueble" class="user__input" autocomplete="off" required>
+          <label for="categ" class="user__label"><b>CATEGORIA:</b></label>
+          <select name="categ" id="codCateg" class="user__input">
+            <option value="pre" selected disabled>Seleciona una categoria...</option>
+          </select>
+          <label for="colorMueble" class="user__label"><b>COLOR DEL MUEBLE:</b></label>
+          <input type="text" id="colorMueble" name="colorMueble" class="user__input" autocomplete="off" required>
+          <label for="materialMueble" class="user__label"><b>MATERIAL DEL MUEBLE:</b></label>
+          <input type="text" id="materialMueble" name="materialMueble" class="user__input" autocomplete="off" required>
+          <label for="precioMueble" class="user__label"><b>PRECIO DEL MUEBLE:</b></label>
+          <input type="text" id="precioMueble" name="precioMueble" class="user__input" autocomplete="off" required>
+          <label for="stockMueble" class="user__label"><b>STOCK DEL MUEBLE:</b></label>
+          <input type="text" id="stockMueble" name="stockMueble" class="user__input" autocomplete="off" required>
           <div class="form__hide"></div>
           <div class="form__buttons">
               <button type="submit" id="guardar" class="boton save"><b>AÑADIR</b></button>
@@ -63,9 +73,9 @@
       </form>
     </section>
     <section class="search">
-      <form action="" class="search__form" id="busca">
-        <input type="text" name="input" id="input" class="form__input" placeholder="Buscar por codigo...." autocomplete="off">
-        <button class="search__add" type="submit" id="buscar">Buscar</button>
+      <form action="" class="search__form" id="busca" novalidate>
+        <input type="text" name="input" id="input" class="form__input" placeholder="Buscar por codigo...." autocomplete="off" required>
+        <button class="search__add" type="submit">Buscar</button>
       </form>
     </section>
     <section class="table">
@@ -74,7 +84,11 @@
           <tr class="table__body">
             <th class="table__body th">CODIGO</th>
             <th class="table__body th">NOMBRE</th>
-            <th class="table__body th">ZONA</th>
+            <th class="table__body th">CATEGORIA</th>
+            <th class="table__body th">COLOR</th>
+            <th class="table__body th">MATERIAL</th>
+            <th class="table__body th">PRECIO</th>
+            <th class="table__body th">STOCK</th>
             <th class="table__body th">MOD.</th>
           </tr>
         </thead>
@@ -88,7 +102,7 @@
     </footer>
   </main>
   <script src="scripts/main.js"></script>
-  <script src="scripts/categoria.js" type="module"></script>
+  <script src="scripts/muebles.js" type="module"></script>
 </body>
 
 </html>

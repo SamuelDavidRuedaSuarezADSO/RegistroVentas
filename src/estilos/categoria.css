@@ -119,7 +119,7 @@ main {
   gap: 20px;
 }
 .datos__img{
-    width: 870px;
+    width: 100%;
     height:360px;
 }
 .datos__form {
@@ -130,9 +130,9 @@ main {
   margin-top: 110px;
 }
 .form__users {
-  width: 700px;
+  width: 900px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 250px 550px;
   gap: 10px;
 }
 .form__buttons{
@@ -237,10 +237,11 @@ main {
   width: 1100px;
 }
 .table__body {
-  padding: 8px;
+  border: 1px solid;
+  border-color: var(--azul-principal);
   text-align: center;
   background-color: var(--color-blanco);
-  margin: auto auto;
+  height: 53px;
 }
 thead{
     height: 30px;
@@ -248,6 +249,11 @@ thead{
 .th{
     background-color: var(--azul-principal);
     color: var(--color-blanco);
+}
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
 }
 .table--primer {
   width: 180px;
@@ -259,8 +265,11 @@ thead{
 .table--segundo {
   width: 300px;
 }
-.table--last {
-  width:350px;
+.table__body .table--last {
+  display: flex;
+  width: 302px;
+  justify-content: center;
+  align-items: center;
 }
 .table__input {
   width: var(--cien-porci);
@@ -335,29 +344,41 @@ thead{
 .boton{
     width: 130px;
     padding: var(--padding);
+    margin-left: 10px;
     border: none;
-    height: 40px;
+    height: 45px;
 }
 .modi{
     background-color: var(--azul-hover);
+    color: var(--color-blanco);
 }
 .modi:hover{
     background-color: var(--azul-principal);
-    color: var(--color-blanco);
-}
-.delete{
-    background-color: var(--blanco-hover);
     color: var(--color-negro);
 }
-.delete:hover{
-    background-color: var(--azul-principal);
+.delete{
+    background-color: var(--color-rojo);
     color: var(--color-blanco);
+}
+.delete:hover{
+    background-color: var(--rojo-oscuro);
+    color: var(--color-negro);
 }
 .save{
     background-color: var(--color-verde);
+    color: var(--color-blanco);
 }
 .save:hover{
     background-color: var(--verde-hover);
+    color: var(--color-negro);
+}
+.clean{
+    background-color: var(--color-amarillo);
+    color: var(--color-blanco);
+}
+.clean:hover{
+    background-color: var(--amarillo-hover);
+    color: var(--color-negro);
 }
 
 /* Info */

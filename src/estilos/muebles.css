@@ -1,0 +1,7 @@
+@import url(global.css);
+
+.sidebar .mueble{
+    color: var(--color-blanco);
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
