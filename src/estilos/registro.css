@@ -15,6 +15,9 @@ main {
   align-items: center;
   height: 75vh;
 }
+header {
+  background: unset;
+}
 .header__logo {
   height: 80px;
   margin-left: 250px;
@@ -116,4 +119,9 @@ option{
 }
 .bien__icon{
   color: var(--color-verde);
+}
+
+.icon {
+  background-color: unset;
+  border-color: var(--azul-medio) var(--azul-oscuro) var(--azul-oscuro) var(--azul-medio);
 }

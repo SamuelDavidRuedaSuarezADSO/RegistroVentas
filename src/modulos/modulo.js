@@ -12,7 +12,7 @@ export const registrar = async (data, direcc) =>{
     .then((json) => console.log(json));
 }
 
-export const listar = async (direcc)=>{
+export const listar = async (direcc)=>{ 
   const response = await fetch(`${URL}${direcc}`);
   const data = await response.json();
   return data;

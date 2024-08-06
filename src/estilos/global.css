@@ -145,7 +145,7 @@ main {
   width: var(--cien-porci);
   max-width: var(--max--width);
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 20px;
   background: url() no-repeat bottom right;
 }
 

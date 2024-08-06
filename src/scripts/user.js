@@ -11,6 +11,7 @@ const $last = document.querySelector("#empleLast");
 const $rol = document.querySelector("#codRol");
 const $contra = document.querySelector("#contraEmple");
 const $elimi = document.querySelector("#eliminar");
+const $clean = document.querySelector("#clean");
 
 const $search = document.querySelector("#search");
 const $input = document.querySelector("#input");
@@ -118,7 +119,6 @@ const list = () =>{
             })
         })
 }
-
 list();
 
 const modi = (event) => {
@@ -189,3 +189,8 @@ const busqueda = (event) => {
 }
 
 $search.addEventListener("submit", busqueda);
+
+$clean.addEventListener("click", (event)=>{
+  event.preventDefault();
+  limpiar();
+})

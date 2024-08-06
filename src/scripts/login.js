@@ -32,6 +32,7 @@ $user.addEventListener("keypress",  (event) => {
 });
 
 $form.addEventListener('submit', (event)=>{
+  let exist = false;
   let resp = requeridos(event, "#form [required]");
   if (resp){
     listar(`usuarios`)
@@ -39,13 +40,21 @@ $form.addEventListener('submit', (event)=>{
           r.forEach((x) => {
             let user = $user.value.trim();
             let passw = $contra.value.trim();
+            console.log(passw);
             if (user == x.id && passw == x.password) {
-              location.href = linkHome;
+              exist = true;       
             }
             else{
               errores();
             }
           }); 
+          if(exist){
+            location.href = linkHome;
+          }
+          else{
+            alert("hola");
+            console.log(exist);
+          }
         })
   }
   else{

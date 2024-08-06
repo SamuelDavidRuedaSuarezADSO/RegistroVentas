@@ -15,11 +15,11 @@
   ],
   "usuarios": [
     {
+      "id": "1",
       "nombre": "admin",
-      "apellido": "admin2",
-      "password": "123",
-      "rol": "1",
-      "id": "1"
+      "apellido": "admin1",
+      "password": "admin",
+      "rol": "1"
     },
     {
       "id": "0987654322",
@@ -34,6 +34,13 @@
       "apellido": "garcia",
       "password": "carlos",
       "rol": "2"
+    },
+    {
+      "id": "2",
+      "nombre": "Sam",
+      "apellido": "admin2",
+      "password": "123",
+      "rol": "1"
     }
   ],
   "clientes": [
