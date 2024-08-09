@@ -38,14 +38,13 @@ $form.addEventListener('submit', (event)=>{
     listar(`usuarios`)
         .then((r) => {
           r.forEach((x) => {
-            let user = $user.value.trim();
-            let passw = $contra.value.trim();
+            let user = $user.value;
+            let passw = $contra.value;
+            console.log(user);
             console.log(passw);
+            console.log(exist);
             if (user == x.id && passw == x.password) {
               exist = true;       
-            }
-            else{
-              errores();
             }
           }); 
           if(exist){
@@ -53,7 +52,7 @@ $form.addEventListener('submit', (event)=>{
           }
           else{
             alert("hola");
-            console.log(exist);
+            errores();
           }
         })
   }
