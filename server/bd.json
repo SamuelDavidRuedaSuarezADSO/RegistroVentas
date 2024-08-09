@@ -45,6 +45,13 @@
   ],
   "clientes": [
     {
+      "id": "1",
+      "nombre": "Ventas",
+      "apellido": "Generales",
+      "telefono": "111111",
+      "email": "vt@gmail.com"
+    },
+    {
       "id": "9898123",
       "nombre": "Pedro",
       "apellido": "Duarte",
@@ -73,13 +80,22 @@
   ],
   "muebles": [
     {
-      "id": "1",
       "nombre": "Cama KingSize",
       "cod_categ": "2",
       "color": "Blanco",
       "material": "Roble y Seda",
       "precio": "3000000",
-      "stock": "5"
+      "stock": "16",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "nombre": "regadera Corona",
+      "cod_categ": "1",
+      "color": "Plateado",
+      "material": "cilicona",
+      "precio": 300000,
+      "stock": 20
     }
   ]
 }

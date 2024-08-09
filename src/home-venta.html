@@ -42,41 +42,54 @@
   </header>
   <main>
     <section class="datos">
-      <form action="" class="datos__form" id="form">
-        <div class="form__users">
-          <label for="empleNom" class="user__label">NOMBRE DEL EMPLEADO:</label>
-          <select type="text" id="empleNom" name="empleNom" class="user__input">
-            <option value=" " selected>Seleccione un empleado...</option>
-          </select>
-          <label for="empleCod" class="user__label">CODIGO DEL EMPLEADO:</label>
-          <input type="text" id="empleCod" name="empleCod" class="user__input" disabled>
-          <label for="clienNom" class="user__label">NOMBRE DEL CLIENTE:</label>
-          <select type="text" id="clienNom" name="clienNom" class="user__input">
-            <option value=" " selected>Seleccione un cliente...</option>
-          </select>
-          <label for="clienCod" class="user__label">CODIGO DEL CLIENTE:</label>
-          <input type="text" id="clienCod" name="clienCod" class="user__input" disabled>
+      <form action="" class="datos__form" id="form" novalidate>
+        <div class="form__user">
+          <div class="form__users">
+            <label for="empleNom" class="user__label">NOMBRE DEL EMPLEADO:</label>
+            <select type="text" id="empleNom" name="empleNom" class="user__input">
+              <option value=" " selected>Seleccione un empleado...</option>
+            </select>
+            <label for="empleCod" class="user__label">CODIGO DEL EMPLEADO:</label>
+            <input type="text" id="empleCod" name="empleCod" class="user__input" disabled required>
+            <label for="clienNom" class="user__label">NOMBRE DEL CLIENTE:</label>
+            <select type="text" id="clienNom" name="clienNom" class="user__input">
+            </select>
+            <label for="clienCod" class="user__label">CODIGO DEL CLIENTE:</label>
+            <input type="text" id="clienCod" name="clienCod" class="user__input" disabled required>
+          </div>
         </div>
-        <div class="form__users">
-          <label for="Cod" class="user__label">CODIGO DEL MUEBLE:</label>
-          <input type="text" id="Cod" name="Cod" class="user__input">
-          <label for="Nom" class="user__label">NOMBRE DEL MUEBLE:</label>
-          <input type="text" id="Nom" name="Nom" class="user__input">
-          <label for="categ" class="user__label">CATEGORIA:</label>
-          <input type="text" id="Categ" name="Categ" class="user__input">
-          <label for="Cant" class="user__label">CANTIDAD:</label>
-          <input type="text" id="Cant" name="Cant" class="user__input">
+        <div class="form__user">
+          <div class="form__users part1">
+            <label for="Cod" class="user__label" style="display: none;">CODIGO DEL MUEBLE:</label>
+            <input type="text" id="Cod" name="Cod" class="user__input" style="display: none;" disabled required>
+            <label for="Nom" class="user__label">NOMBRE DEL MUEBLE:</label>
+            <input type="text" id="Nom" name="Nom" class="user__input" disabled required>
+            <label for="Color" class="user__label">COLOR:</label>
+            <input type="text" id="Color" name="Color" class="user__input" disabled required>
+            <label for="Categ" class="user__label">CATEGORIA:</label>
+            <input type="text" id="Categ" name="Categ" class="user__input" disabled required>
+            <label for="Pre" class="user__label">PRECIO:</label>  
+            <input type="text" id="Pre" name="Pre" class="user__input" disabled required>
+            <label for="Stock" class="user__label">STOCK:</label>
+            <input type="text" id="Stock" name="Stock" class="user__input" disabled required>
+            <label for="Cant" class="user__label">CANTIDAD:</label>
+            <input type="number" id="Cant" name="Cant" class="user__input" value="0">
+          </div>
+          <button class="botones__boton boton--pagar add" type="submit"><b>AÑADIR</b></button>
         </div>
       </form>
     </section>
     <section class="search">
-      <button class="search__lupa">
-        <i class="fa-solid fa-magnifying-glass search__lupa--icon"></i>
-      </button>
-      <form action="" class="search__form">
-        <input type="search" name="input" id="input" class="form__input">
-      </form>
-      <button class="search__add">Añadir</button>
+      <div class="search__search">
+        <button class="search__lupa">
+          <i class="fa-solid fa-magnifying-glass search__lupa--icon"></i>
+        </button>
+        <form action="" class="search__form" id="search" novalidate>
+          <input type="search" name="input" id="input" class="form__input" autocomplete="off" required>
+          <button class="search__add" id="buscar" type="submit">Buscar</button>
+        </form>
+      </div>
+      
     </section>
     <section class="table">
       <table class="table__table">
@@ -84,24 +97,25 @@
           <tr>
             <th>CODIGO</th>
             <th>NOMBRE</th>
+            <th>COLOR</th>
             <th>CANTIDAD</th>
             <th>VALOR/U</th>
             <th>VALOR/T</th>
-            <th></th>
+            <th>ELIMINAR</th>
           </tr>
         </thead>
         <tbody class="table__table table__table--body" id="tbody">          
         </tbody>
       </table>
       <table class="table__fin">
-        <tbody>
+        <thead>
           <tr>
-            <th>
-              <p class="table__p">TOTAL A PAGAR:</p>
-            </th>
+            <th class="table__p">TOTAL A PAGAR:</th>
           </tr>
+        </thead>
+        <tbody class="table__body">
           <tr class="table__body">
-            <th class="table__body table--press"></th>
+            <td class="table__body table--press" id="totalF"></td>
           </tr>
         </tbody>
       </table>

@@ -15,6 +15,9 @@ const $icon2 = document.querySelector("#candado");
 
 
 function errores(){
+  $user.classList.remove("bien");
+  $contra.classList.remove("bien");
+  $icon.classList.remove("bien__icon");
   $user.classList.add("error");
   $contra.classList.add("error");
   $icon.classList.add("error__icon");
@@ -40,9 +43,7 @@ $form.addEventListener('submit', (event)=>{
           r.forEach((x) => {
             let user = $user.value;
             let passw = $contra.value;
-            console.log(user);
-            console.log(passw);
-            console.log(exist);
+            
             if (user == x.id && passw == x.password) {
               exist = true;       
             }
@@ -51,7 +52,6 @@ $form.addEventListener('submit', (event)=>{
             location.href = linkHome;
           }
           else{
-            alert("hola");
             errores();
           }
         })

@@ -39,6 +39,7 @@
   --amarillo-oscuro: #ddb501;
   --verde-hover: #11ce50;
   --verde-oscuro: #0ac438;
+  --font-size-peque: 0.9rem;
   --font-size-normal: 1rem;
   --font-size-grande: 1.25rem;
   --width-input: 420px;
@@ -335,7 +336,7 @@ thead{
 }
 .botones__boton {
   width: 150px;
-  height: 40px;
+  height: 45px;
   color: var(--color-blanco);
   font-size: var(--letra--tamaño--pequeña);
   font-weight: 600;

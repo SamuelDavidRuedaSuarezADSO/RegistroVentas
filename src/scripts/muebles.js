@@ -142,6 +142,7 @@ llenarTabla();
 $form.addEventListener("submit", (event)=>{
     let vali = requeridos(event, "#form [required]");
     if(vali){
+        
         if($categ.value != "pre"){
             const datos = {
                 id: $cod.value,
@@ -149,8 +150,8 @@ $form.addEventListener("submit", (event)=>{
                 cod_categ: $categ.value,
                 color: $color.value,
                 material: $mater.value,
-                precio: $preci.value,
-                stock: $stock.value
+                precio: parseInt($preci.value),
+                stock: parseInt($stock.value)
             }
             registrar(datos, `muebles`);
             alert("MUEBLE registrado con exito");
