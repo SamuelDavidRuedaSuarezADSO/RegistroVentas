@@ -30,6 +30,7 @@ function limpiar(){
   $prec.value = "";
   $stock.value = "";
   $cant.value = "0";
+  $searchInput.value = "";
 }
 
 function empleado(){
@@ -61,9 +62,6 @@ function cliente(){
     listar(`clientes`)
         .then((x)=>{
           x.forEach((e) => {
-              if(e.id == "1"){
-                $clienCod.value = e.id
-              }
               const $option = document.createElement("option");
               $option.setAttribute("value", e.id)
               let full = e.nombre + " " + e.apellido;
@@ -74,9 +72,11 @@ function cliente(){
         })
 }
 cliente();
+console.log($clienNom.value);
+
 $clienNom.addEventListener("change", () => {
-    const seleccion = $clienNom.options[$clienNom.selectedIndex];
-    $clienCod.value = seleccion.value;
+  const seleccion = $clienNom.options[$clienNom.selectedIndex];
+  $clienCod.value = seleccion.value;
 });
 
 $searchInput.addEventListener("keypress",(event)=>{
@@ -184,25 +184,19 @@ $form.addEventListener("submit", (event)=>{
         let tb = $table.children;
         console.log(tb);
         let precioT = 0;
-        
-            
+        let precioU = 0;
+        let pres = 0;
+
         for(let i = 0; i<$table.childElementCount; i++){
-          
           let hijo = tb[i].children;
-          let precioU = 0;
-
           for(let o = 0; o<tb[i].childElementCount; o++){
-            precioU = hijo[5];
-            
+            precioU = hijo[5].textContent;
+            pres = parseInt(precioU);
           }
-
-          
-          
+          precioT = precioT + pres
         }
-        
-        console.log(precioT);
-        
-        
+        $total.textContent = precioT;
+
       }
       else{
         alert("ERROR: No hay STOCK disponible");
