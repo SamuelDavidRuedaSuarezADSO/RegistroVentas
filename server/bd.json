@@ -84,8 +84,8 @@
       "cod_categ": "2",
       "color": "Blanco",
       "material": "Roble y Seda",
-      "precio": "3000000",
-      "stock": "16",
+      "precio": 3000000,
+      "stock": 16,
       "id": "1"
     },
     {
@@ -96,6 +96,27 @@
       "material": "cilicona",
       "precio": 300000,
       "stock": 20
+    }
+  ],
+  "Pedidos": [
+    {
+      "id": "1",
+      "empleado": "1",
+      "cliente": "1",
+      "contenido":[
+        {
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16,
+          "id": "1"
+        }
+      ],
+      "total": 3000000,
+      "paga": 3500000,
+      "cambio": 500000
     }
   ]
 }
