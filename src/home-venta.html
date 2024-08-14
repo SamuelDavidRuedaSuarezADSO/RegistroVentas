@@ -53,7 +53,6 @@
             <input type="text" id="empleCod" name="empleCod" class="user__input" disabled required>
             <label for="clienNom" class="user__label">NOMBRE DEL CLIENTE:</label>
             <select type="text" id="clienNom" name="clienNom" class="user__input">
-              <option value=" " selected>Seleccione un Cliente...</option>
             </select>
             <label for="clienCod" class="user__label">CODIGO DEL CLIENTE:</label>
             <input type="text" id="clienCod" name="clienCod" class="user__input" disabled required>
@@ -123,7 +122,14 @@
     </section>
     <section class="botones">
       <button class="botones__boton boton--eliminar">ELIMINAR</button>
-      <button class="botones__boton boton--pagar">PAGAR</button>
+      <button class="botones__boton boton--pagar" id="open">PAGAR</button>
+    </section>
+    <section id="overlay" class="overlay">
+        <div id="modal" class="modal">
+          <h2>Ultimos Detalles</h2>
+
+          <button id="cancel" class="botones__boton boton--eliminar">CANCELAR</button>
+        </div>
     </section>
     <footer class="info">
       <h3 class="info__copy">©2024 SamuelRueda. Todos los derechos reservador</h3>

@@ -21,6 +21,9 @@ const $searchInput = document.querySelector("#input");
 const $form = document.querySelector("#form");
 const $table = document.querySelector("#tbody");
 const $total = document.querySelector("#totalF")
+const $pagar = document.querySelector("#open");
+const $cancel = document.querySelector("#cancel");
+const $over = document.querySelector("#overlay");
 
 function limpiar(){
   $cod.value = "";
@@ -66,17 +69,21 @@ function cliente(){
               $option.setAttribute("value", e.id)
               let full = e.nombre + " " + e.apellido;
               $option.textContent = full;
+              if (e.id == 1) {
+                $option.setAttribute("selected", "selected");
+                $clienCod.value = e.id;
+              }
               $frag.appendChild($option);
             });
             $clienNom.appendChild($frag);
         })
 }
 cliente();
-console.log($clienNom.value);
 
 $clienNom.addEventListener("change", () => {
   const seleccion = $clienNom.options[$clienNom.selectedIndex];
   $clienCod.value = seleccion.value;
+  console.log($clienNom.value);
 });
 
 $searchInput.addEventListener("keypress",(event)=>{
@@ -182,7 +189,6 @@ $form.addEventListener("submit", (event)=>{
         limpiar();
         
         let tb = $table.children;
-        console.log(tb);
         let precioT = 0;
         let precioU = 0;
         let pres = 0;
@@ -197,6 +203,16 @@ $form.addEventListener("submit", (event)=>{
         }
         $total.textContent = precioT;
 
+        if ($table.childElementCount != 0) {
+          $pagar.addEventListener('click', function() {
+            $over.style.display = 'flex';
+          });
+          
+          $cancel.addEventListener('click', function() {
+            $over.style.display = 'none';
+          });
+        }
+
       }
       else{
         alert("ERROR: No hay STOCK disponible");
@@ -210,4 +226,5 @@ $form.addEventListener("submit", (event)=>{
     alert("ERROR: Algunos campos estan VACIOS");
   }
 })
+
 
