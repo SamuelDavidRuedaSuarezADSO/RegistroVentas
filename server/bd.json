@@ -208,6 +208,63 @@
       "total": 600000,
       "paga": 600000,
       "cambio": 0
+    },
+    {
+      "id": "4e35",
+      "empleado": "1",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16
+        }
+      ],
+      "total": 6000000,
+      "paga": 6000000,
+      "cambio": 0
+    },
+    {
+      "id": "4754",
+      "empleado": "1102354168",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16
+        }
+      ],
+      "total": 6000000,
+      "paga": 6000000,
+      "cambio": 0
+    },
+    {
+      "id": "9051",
+      "empleado": "1",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16
+        }
+      ],
+      "total": 6000000,
+      "paga": 6000000,
+      "cambio": 0
     }
   ]
 }

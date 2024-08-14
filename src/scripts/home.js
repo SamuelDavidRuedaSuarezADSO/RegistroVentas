@@ -24,7 +24,7 @@ const $table = document.querySelector("#tbody");
 const $total = document.querySelector("#totalF");
 const $open = document.getElementById('open');
 const $modal = document.getElementById('detall');
-const $close = document.getElementById('close');
+const $close = document.querySelector('#close');
 const $empleado = document.querySelector("#emple");
 const $cliente = document.querySelector("#client");
 const $totPaga = document.querySelector("#totPaga");
@@ -259,9 +259,7 @@ $form.addEventListener("submit", (event)=>{
           $pagaCon.value = precioT;
         });
         
-        $close.addEventListener('click', () => {
-          $modal.style.display = 'none';
-        });
+        
         
         eli.addEventListener("click", (event)=>{
           event.preventDefault();
@@ -283,6 +281,11 @@ $form.addEventListener("submit", (event)=>{
     alert("ERROR: Algunos campos estan VACIOS");
   }
 })
+
+$close.addEventListener('click', (event) => {
+  event.preventDefault();
+  $modal.style.display = 'none';
+});
 
 $fomrDetalls.addEventListener("submit", async (event) => {
   event.preventDefault();
