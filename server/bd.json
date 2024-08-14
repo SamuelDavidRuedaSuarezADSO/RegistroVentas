@@ -30,15 +30,22 @@
       "apellido": "admin2",
       "password": "123",
       "rol": "1"
+    },
+    {
+      "id": "3",
+      "nombre": "Pepito",
+      "apellido": "Perez",
+      "password": "123",
+      "rol": "2"
     }
   ],
   "clientes": [
     {
-      "id": "1",
       "nombre": "Ventas",
       "apellido": "Generales",
       "telefono": "111111",
-      "email": "vt@gmail.com"
+      "email": "holza@gmail.com",
+      "id": "1"
     },
     {
       "id": "9898123",
@@ -125,6 +132,44 @@
       "total": 3000000,
       "paga": 3500000,
       "cambio": 500000
+    },
+    {
+      "id": "8e37",
+      "empleado": "1102354168",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16
+        }
+      ],
+      "total": 6000000,
+      "paga": 6000000,
+      "cambio": 0
+    },
+    {
+      "id": "a594",
+      "empleado": "1102354168",
+      "cliente": "9898123",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16
+        }
+      ],
+      "total": 6000000,
+      "paga": 7000000,
+      "cambio": 1000000
     }
   ]
 }

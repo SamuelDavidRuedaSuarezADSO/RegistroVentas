@@ -49,18 +49,11 @@ function empleado(){
     listar(`usuarios`)
         .then((x)=>{
           x.forEach((e) => {
-              if (e.rol != "1") {  
                 const $option = document.createElement("option");
                 $option.setAttribute("value", e.id)
-                if (e.nombre == "admin") {
-                  $option.textContent = "";
-                }
-                else {
-                  let full = e.nombre + " " + e.apellido;
-                  $option.textContent =full;
-                  $frag.appendChild($option);
-                }
-              }
+                let full = e.nombre + " " + e.apellido;
+                $option.textContent =full;
+                $frag.appendChild($option);
             });
             $empleNom.appendChild($frag);
         })
@@ -148,7 +141,7 @@ $form.addEventListener("submit", (event)=>{
       let cantidad = parseInt($cant.value);
       let stock = parseInt($stock.value);
       let precio = parseInt($prec.value);
-      if(cantidad <=    stock){
+      if(cantidad <= stock){
         const tr = document.createElement("tr");
         const cod = document.createElement("td");
         const nom = document.createElement("td");
@@ -199,7 +192,7 @@ $form.addEventListener("submit", (event)=>{
         
         $frag2.appendChild(tr);
         $table.appendChild($frag2);
-        limpiar();
+        
         
         let tb = $table.children;
         let precioT = 0;

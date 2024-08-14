@@ -48,7 +48,7 @@ $dni.addEventListener("keypress", (event) => {
     soloNumeros(event, $dni, $icon3)
 })
 
-$cancelar.addEventListener("click", function (){
+$cancelar.addEventListener("click", ()=>{
     location.href = linkHome;
 })
 
