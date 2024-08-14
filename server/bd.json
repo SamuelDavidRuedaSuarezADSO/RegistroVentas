@@ -170,6 +170,44 @@
       "total": 6000000,
       "paga": 7000000,
       "cambio": 1000000
+    },
+    {
+      "id": "3acc",
+      "empleado": "1",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "Blanco",
+          "material": "Roble y Seda",
+          "precio": 3000000,
+          "stock": 16
+        }
+      ],
+      "total": 3000000,
+      "paga": 3000000,
+      "cambio": 0
+    },
+    {
+      "id": "35a3",
+      "empleado": "1102354168",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "2",
+          "nombre": "regadera Corona",
+          "cod_categ": "1",
+          "color": "Plateado",
+          "material": "cilicona",
+          "precio": 300000,
+          "stock": 20
+        }
+      ],
+      "total": 600000,
+      "paga": 600000,
+      "cambio": 0
     }
   ]
 }

@@ -347,7 +347,10 @@ $fomrDetalls.addEventListener("submit", async (event) => {
             });
           };
 
-          await showAlert(cambio !== 0 ? `El cambio es: ${cambio}` : '');
+          if(cambio != 0){
+            await showAlert(cambio !== 0 ? `El cambio es: ${cambio}` : '');
+          }
+
           await showAlert("Venta registrada");
 
         } catch (error) {
