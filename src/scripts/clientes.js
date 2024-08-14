@@ -111,11 +111,13 @@ $form.addEventListener("submit", (event)=>{
     let resp = requeridos(event, "#form [required]");
     if(resp){
         if(rege.test($email.value)){
-            buscar($dni.value, `clientes`)
+            listar(`clientes`)
                 .then((data)=>{
-                    if(data.id == $dni.value){
-                        exits = true;
-                    }
+                    data.forEach((d)=>{
+                        if(d.id == $dni.value){
+                            exits = true;
+                        }
+                    })
                     if(exits){
                         alert("ERROR: El CLIENTE ya existe")
                     }

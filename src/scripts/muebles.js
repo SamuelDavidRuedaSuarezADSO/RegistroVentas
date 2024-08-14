@@ -140,26 +140,40 @@ function llenarTabla(){
 llenarTabla();
 
 $form.addEventListener("submit", (event)=>{
+    let existe = false;
     let vali = requeridos(event, "#form [required]");
     if(vali){
-        
-        if($categ.value != "pre"){
-            const datos = {
-                id: $cod.value,
-                nombre: $nomM.value,
-                cod_categ: $categ.value,
-                color: $color.value,
-                material: $mater.value,
-                precio: parseInt($preci.value),
-                stock: parseInt($stock.value)
-            }
-            registrar(datos, `muebles`);
-            alert("MUEBLE registrado con exito");
-            limpiar();
-        }
-        else{
-            alert("ERROR: Seleccion una categoria");
-        }
+        listar(`muebles`)
+            .then((data)=>{                
+                data.forEach((d)=>{                    
+                    if(d.id == $cod.value){
+                        existe = true;
+                    }
+                })
+                if(existe){
+                    alert("ERROR: El CODIGO del mueble ya esta en USO");
+                }
+                else{
+                    if($categ.value != "pre"){
+                        const datos = {
+                            id: $cod.value,
+                            nombre: $nomM.value,
+                            cod_categ: $categ.value,
+                            color: $color.value,
+                            material: $mater.value,
+                            precio: parseInt($preci.value),
+                            stock: parseInt($stock.value)
+                        }
+                        registrar(datos, `muebles`);
+                        alert("MUEBLE registrado con exito");
+                        limpiar();
+                    }
+                    else{
+                        alert("ERROR: Seleccion una categoria");
+                    }
+                }
+            })
+            
     }
     else{
         alert("ERROR: Completa todos los campos")

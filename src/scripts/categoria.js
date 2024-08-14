@@ -67,7 +67,8 @@ function contenido(){
             tr.appendChild(zon);
             tr.appendChild(botones);
 
-            dele.addEventListener("click", ()=>{
+            dele.addEventListener("click", (event)=>{
+                event.preventDefault();
                 eliminar(cod.textContent, `categoria`);
             })
 
@@ -97,27 +98,31 @@ $buscarInput.addEventListener("keypress", (event)=>{
 
 
 $form.addEventListener("submit", (event)=>{
-    let existe = false;
+    event.preventDefault();
     let resp = requeridos(event, "#form [required]");
     if(resp){
-        buscar($cod.value, `categoria`)
+        let existe = false;
+        listar(`categoria`)
             .then((x)=>{
-                if(x.id == $cod.value){
-                    existe = true;
+                x.forEach((a)=>{
+                    if(a.id == $cod.value){
+                        existe = true;
+                    }
+                })
+                if(existe){
+                    alert("ERROR: El CODIGO de la CATEGORIA ya esta en uso");
                 }
-            })
-            if(existe){
-                alert("ERROR: El CODIGO de la CATEGORIA ya esta en uso");
-            }else{
-                const data = {
-                    id: $cod.value,
-                    nombre: $nom.value,
-                    zona: $zon.value
+                else{
+                    const data = {
+                        id: $cod.value,
+                        nombre: $nom.value,
+                        zona: $zon.value
+                    }
+                    registrar(data, `categoria`);
+                    limpiar();
+                    alert("La CATEGORIA fue registrada con exito");
                 }
-                registrar(data, `categoria`);
-                limpiar();
-                alert("La CATEGORIA fue registrada con exito");
-            }
+            })     
     }
 });
 

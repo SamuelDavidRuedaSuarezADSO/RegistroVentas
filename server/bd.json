@@ -6,7 +6,7 @@
     },
     {
       "id": "2",
-      "name": "emple"
+      "name": "empleado"
     }
   ],
   "usuarios": [
@@ -64,14 +64,14 @@
   ],
   "categoria": [
     {
-      "nombre": "Camas",
-      "zona": "dormitorio",
-      "id": "2"
+      "id": "1",
+      "nombre": "camas",
+      "zona": "dormitorio"
     },
     {
-      "id": "1",
-      "nombre": "Regaderas",
-      "zona": "baños"
+      "id": "2",
+      "nombre": "regaderas",
+      "zona": "baño"
     }
   ],
   "muebles": [
@@ -86,11 +86,11 @@
     },
     {
       "id": "2",
-      "nombre": "regadera Corona",
-      "cod_categ": "1",
-      "color": "Plateado",
+      "nombre": "regaderas Corona",
+      "cod_categ": "2",
+      "color": "plateado",
       "material": "cilicona",
-      "precio": 300000,
+      "precio": 250000,
       "stock": 20
     }
   ],
