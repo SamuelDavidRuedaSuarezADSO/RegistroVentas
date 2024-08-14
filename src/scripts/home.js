@@ -20,10 +20,14 @@ const $searchForm = document.querySelector("#search");
 const $searchInput = document.querySelector("#input");
 const $form = document.querySelector("#form");
 const $table = document.querySelector("#tbody");
-const $total = document.querySelector("#totalF")
-const $pagar = document.querySelector("#open");
-const $cancel = document.querySelector("#cancel");
-const $over = document.querySelector("#overlay");
+const $total = document.querySelector("#totalF");
+const $open = document.getElementById('open');
+const $modal = document.getElementById('detall');
+const $close = document.getElementById('close');
+const $empleado = document.querySelector("#emple");
+const $cliente = document.querySelector("#client");
+const $totPaga = document.querySelector("#totPaga");
+const $pagaCon = document.querySelector("#pagaCon");
 
 function limpiar(){
   $cod.value = "";
@@ -94,6 +98,10 @@ $cant.addEventListener("keypress", (event)=>{
     soloNumeros(event, $cant)
 })
 
+$pagaCon.addEventListener("keypress", (event)=>{
+    soloNumeros(event, $pagaCon);
+})
+
 $searchForm.addEventListener("submit", (event)=>{
   event.preventDefault();
   let algo = requeridos(event, "#search [required]");
@@ -145,7 +153,7 @@ $form.addEventListener("submit", (event)=>{
         nom.textContent = $nom.value;
         col.textContent = $color.value;
         cad.textContent = cantidad;
-        vaU.textContent = precio;
+        vaU.textContent = precio; 
         vaT.textContent = precio * cantidad;
         eli.textContent = "ELIMINAR";
 
@@ -170,11 +178,6 @@ $form.addEventListener("submit", (event)=>{
         boton.classList.add("table--last");
         eli.classList.add("delete");
 
-        eli.addEventListener("click", (event)=>{
-          event.preventDefault();
-          tr.remove();
-        });
-  
         boton.appendChild(eli)
         tr.appendChild(cod);
         tr.appendChild(nom);
@@ -183,7 +186,7 @@ $form.addEventListener("submit", (event)=>{
         tr.appendChild(vaU);
         tr.appendChild(vaT);
         tr.appendChild(boton);
-  
+        
         $frag2.appendChild(tr);
         $table.appendChild($frag2);
         limpiar();
@@ -192,7 +195,7 @@ $form.addEventListener("submit", (event)=>{
         let precioT = 0;
         let precioU = 0;
         let pres = 0;
-
+        
         for(let i = 0; i<$table.childElementCount; i++){
           let hijo = tb[i].children;
           for(let o = 0; o<tb[i].childElementCount; o++){
@@ -202,17 +205,43 @@ $form.addEventListener("submit", (event)=>{
           precioT = precioT + pres
         }
         $total.textContent = precioT;
+        
+        $open.addEventListener('click', () => {
+          $modal.style.display = 'block';
 
-        if ($table.childElementCount != 0) {
-          $pagar.addEventListener('click', function() {
-            $over.style.display = 'flex';
-          });
-          
-          $cancel.addEventListener('click', function() {
-            $over.style.display = 'none';
-          });
-        }
+          let tb2 = $table.children;
+          for(let r = 0; r<tb2.length; r++){
+            // let son = tb2[r].children;
+            console.log(tb2[r]);  
+            
+            
 
+          }
+
+          buscar($empleCod.value, `usuarios`)
+            .then((datos)=>{
+              $empleado.value = datos.nombre + " " + datos.apellido;
+            })
+
+          buscar($clienCod.value, `clientes`)
+            .then((data)=>{
+              $cliente.value = data.nombre + " " + data.apellido;
+            })
+
+          $totPaga.value = precioT;
+        });
+        
+        $close.addEventListener('click', () => {
+          $modal.style.display = 'none';
+        });
+        
+        eli.addEventListener("click", (event)=>{
+          event.preventDefault();
+          tr.remove();
+          if(tb.length == 0){
+            $total.textContent = "";
+          }          
+        });
       }
       else{
         alert("ERROR: No hay STOCK disponible");
@@ -226,5 +255,8 @@ $form.addEventListener("submit", (event)=>{
     alert("ERROR: Algunos campos estan VACIOS");
   }
 })
+
+
+
 
 
