@@ -44,6 +44,21 @@ function limpiar(){
     $rol.value = "pre";
 }
 
+function roles(){
+    listar(`roles`)
+        .then((x)=>{
+            x.forEach((a)=>{
+                if(a.id != "1"){
+                    const option = document.createElement("option")
+                    option.setAttribute("value", a.id)
+                    option.innerText = a.name;
+                    $rol.appendChild(option);
+                }
+            })
+        })
+}
+roles();
+
 $dni.addEventListener("keypress", (event) => {
     soloNumeros(event, $dni, $icon3)
 })
