@@ -420,3 +420,7 @@ thead{
 .info__copy {
   font-size: var(--letra--tamaño--pequeña);
 }
+
+.hidden{
+  display: none;
+}
