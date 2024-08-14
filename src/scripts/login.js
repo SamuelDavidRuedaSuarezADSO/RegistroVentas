@@ -4,6 +4,8 @@ import requeridos from "../modulos/requiere.js"
 
 
 let linkHome = "src/home-venta.html";
+let linkHomeAdmin = "src/home-ventaAdmin.html";
+
 
 const $user = document.querySelector("#user");
 const $contra = document.querySelector("#contra");
@@ -36,6 +38,7 @@ $user.addEventListener("keypress",  (event) => {
 
 $form.addEventListener('submit', (event)=>{
   let exist = false;
+  let rol;
   let resp = requeridos(event, "#form [required]");
   if (resp){
     listar(`usuarios`)
@@ -43,13 +46,31 @@ $form.addEventListener('submit', (event)=>{
           r.forEach((x) => {
             let user = $user.value;
             let passw = $contra.value;
-            
             if (user == x.id && passw == x.password) {
-              exist = true;       
+              exist = true;
+              rol = x.rol;
+              console.log(rol);
+              
             }
           }); 
-          if(exist){
-            location.href = linkHome;
+          if (exist) {
+            console.log(rol);
+            
+            switch (rol) {
+              case "1":
+                location.href = linkHomeAdmin;
+                break;
+              case "2":
+                location.href = linkHome;
+                break;
+              
+              case "3":
+
+                break;
+            
+              default:
+                break;
+            }
           }
           else{
             errores();

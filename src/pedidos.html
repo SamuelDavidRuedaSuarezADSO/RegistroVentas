@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos/pedidos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Venta Muebles HomeHouse - Pedidos</title>
+</head>
+
+<body>
+  <header>
+    <div class="home">
+      <button class="home__bars" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars home__icon"></i>
+      </button>
+      <div id="sidebar" class="sidebar">
+        <div>
+          <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">
+            <button class="home__bars icon">
+              <i class="fa-solid fa-bars home__icon "></i>
+            </button>
+          </a>
+          <a href="home-venta.html" class="venta">Venta</a>
+          <a href="muebles.html">Muebles</a>
+          <a href="categoria.html">Categoria</a>
+          <a href="#">Pedidos</a>
+          <a href="clientes.html">Clientes</a>
+        </div>
+        <div class="sidebar__last">
+          <a href="resgistro.html">Registrar Usuario</a>
+          <a href="../index.html">Cerrar Seción</a>
+        </div>
+      </div>
+      <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
+      <h1 class="home__title">PEDIDOS</h1>
+    </div>
+  </header>
+    <main>
+      <section>
+        <h1>Lista de Pedidos</h1>
+        <table id="pedidos-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Empleado</th>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                    <th>Paga</th>
+                    <th>Cambio</th>
+                    <th>Contenido</th>
+                </tr>
+            </thead>
+            <tbody id="pedidos-body">
+            </tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="info">
+      <h3 class="info__copy">©2024 SamuelRueda. Todos los derechos reservador</h3>
+      <div class="info__fecha" id="fecha"></div>
+    </footer>
+  </main>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/pedidos.js" type="module"></script>
+</body>
+
+</html>

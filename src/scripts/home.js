@@ -4,6 +4,7 @@ import requeridos from "../modulos/requiere.js";
 
 const $frag = document.createDocumentFragment();
 const $frag2 = document.createDocumentFragment();
+const $frag3 = document.createDocumentFragment();
 
 const $empleNom = document.querySelector("#empleNom");
 const $empleCod = document.querySelector("#empleCod");
@@ -28,6 +29,9 @@ const $empleado = document.querySelector("#emple");
 const $cliente = document.querySelector("#client");
 const $totPaga = document.querySelector("#totPaga");
 const $pagaCon = document.querySelector("#pagaCon");
+const $tablaD = document.querySelector("#tablaD");
+const $fomrDetalls = document.querySelector("#fomrDetalls");
+const $deleteAll = document.querySelector("#deleteAll");
 
 function limpiar(){
   $cod.value = "";
@@ -37,6 +41,7 @@ function limpiar(){
   $prec.value = "";
   $stock.value = "";
   $cant.value = "0";
+  $empleCod.value = "";
   $searchInput.value = "";
 }
 
@@ -100,6 +105,11 @@ $cant.addEventListener("keypress", (event)=>{
 
 $pagaCon.addEventListener("keypress", (event)=>{
     soloNumeros(event, $pagaCon);
+})
+
+$deleteAll.addEventListener("click", (event) => {
+  window.location.reload();
+  limpiar();
 })
 
 $searchForm.addEventListener("submit", (event)=>{
@@ -208,27 +218,52 @@ $form.addEventListener("submit", (event)=>{
         
         $open.addEventListener('click', () => {
           $modal.style.display = 'block';
-
           let tb2 = $table.children;
-          for(let r = 0; r<tb2.length; r++){
-            // let son = tb2[r].children;
-            console.log(tb2[r]);  
-            
-            
+          for(let r = 0; r < tb2.length; r++){
+            let son = tb2[r].children;
+            const trD = document.createElement("tr");
+            trD.classList.add("table__body");
 
+            const codD = document.createElement("td");
+            const nomD = document.createElement("td");
+            const cantD = document.createElement("td");
+            const vUD = document.createElement("td");
+            const vTD = document.createElement("td");
+
+            codD.textContent = son[0].textContent;
+            nomD.textContent = son[1].textContent;
+            cantD.textContent = son[3].textContent;
+            vUD.textContent = son[4].textContent;
+            vTD.textContent = son[5].textContent;
+
+            codD.classList.add("table__body", "table--primer");
+            nomD.classList.add("table__body", "table--segundo");
+            cantD.classList.add("table__body", "table--segundo");
+            vUD.classList.add("table__body", "table--segundo");
+            vTD.classList.add("table__body", "table--segundo");
+
+            trD.appendChild(codD);
+            trD.appendChild(nomD);
+            trD.appendChild(cantD);
+            trD.appendChild(vUD);
+            trD.appendChild(vTD);
+
+            $frag3.appendChild(trD);
           }
+          $tablaD.innerHTML = '';
+          
+          $tablaD.appendChild($frag3);
 
-          buscar($empleCod.value, `usuarios`)
-            .then((datos)=>{
-              $empleado.value = datos.nombre + " " + datos.apellido;
-            })
+          buscar($empleCod.value, `usuarios`).then((datos) => {
+            $empleado.value = datos.id + " - " + datos.nombre + " " + datos.apellido;
+          });
 
-          buscar($clienCod.value, `clientes`)
-            .then((data)=>{
-              $cliente.value = data.nombre + " " + data.apellido;
-            })
+          buscar($clienCod.value, `clientes`).then((data) => {
+            $cliente.value = data.id + " - " + data.nombre + " " + data.apellido;
+          });
 
           $totPaga.value = precioT;
+          $pagaCon.value = precioT;
         });
         
         $close.addEventListener('click', () => {
@@ -240,7 +275,7 @@ $form.addEventListener("submit", (event)=>{
           tr.remove();
           if(tb.length == 0){
             $total.textContent = "";
-          }          
+          }
         });
       }
       else{
@@ -256,7 +291,85 @@ $form.addEventListener("submit", (event)=>{
   }
 })
 
+$fomrDetalls.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
+  let algo = requeridos(event, "#fomrDetalls [required]");
+  if (algo) {
+    let totalP = parseInt($totPaga.value);
+    let pagaP = parseInt($pagaCon.value);
+
+    if (pagaP > 0) {
+      if (totalP <= pagaP) {
+        const muebleData = [];
+        let tb3 = $tablaD.children;
+
+        try {
+          const promises = Array.from(tb3).map(async row => {
+            let son3 = row.children;
+            let mueble = son3[0].textContent;
+
+            let d = await buscar(mueble, 'muebles');
+            let id = d.id;
+            let nombre = d.nombre;
+            let cod_categ = d.cod_categ;
+            let color = d.color;
+            let material = d.material;
+            let precio = d.precio;
+            let stock = d.stock;
+
+            muebleData.push({
+              id,
+              nombre,
+              cod_categ,
+              color,
+              material,
+              precio,
+              stock
+            });
+          });
+
+          await Promise.all(promises);
+
+          let cambio = pagaP - totalP;
+
+          const codEmp = $empleado.value.match(/^\d+/)[0];
+          const codCli = $cliente.value.match(/^\d+/)[0];
+
+          const newPedido = {
+            empleado: codEmp,
+            cliente: codCli,
+            contenido: muebleData,
+            total: totalP,
+            paga: pagaP,
+            cambio: cambio
+          };
+
+          await registrar(newPedido, 'Pedidos');
+
+          const showAlert = (message) => {
+            return new Promise((resolve) => {
+              alert(message);
+              resolve();
+            });
+          };
+
+          await showAlert(cambio !== 0 ? `El cambio es: ${cambio}` : '');
+          await showAlert("Venta registrada");
+
+        } catch (error) {
+          console.error('Error al registrar el pedido:', error);
+          alert("Hubo un error al registrar la venta.");
+        }
+
+      } else {
+        alert("ERROR: El valor ingresado no es suficiente para cerrar la compra");
+      }
+    } else {
+      alert("ERROR: Valor no válido");
+    }
+  }
+});
 
 
 

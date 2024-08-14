@@ -1,0 +1,50 @@
+@import url(global2.css);
+
+body{
+  font-size: 1.1rem;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: var(--azul-hover);
+    color: var(--color-blanco);
+}
+
+tr{
+  height: 60px;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td:last-child {
+    text-align: left;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}

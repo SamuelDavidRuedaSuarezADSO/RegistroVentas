@@ -1,4 +1,4 @@
-@import url(global.css);
+@import url(global2.css);
 
 header {
   background-color: var(--azul-principal);
@@ -120,7 +120,7 @@ main {
 }
 .datos__img{
     width: 100%;
-    height: 0px;
+    height:0px;
 }
 .datos__form {
   display: flex;

@@ -1,4 +1,49 @@
-@import url(global.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --azul-medio: #68b603;
+  --azul-medio-hover: #79b925;
+  --azul-oscuro: #365f00;
+  --azul-principal: #518D05;
+  --azul-hover: #73c40a;
+  --blanco-hover: #f1f1f1;
+  --color-blanco: #fff;
+  --border-ancho: 3px;
+  --border-input: 4px;
+  --boton-tamaño: 45px;
+  --border-radius: 8px;
+  --border-radius-grande: 20px;
+  --cien-porci: 100%;
+  --color-blanco: #fff;
+  --color-negro: #000;
+  --color-rojo: #f33737;
+  --color-verde: #00b612;
+  --color-amarillo: #f7cf1c;
+  --height-header: 60px;
+  --height-input: 55px;
+  --letra--mediana--grande: 25px;
+  --letra--tamaño--grande: 40px;
+  --letra--tamaño--mediana: 20px;
+  --letra--tamaño--pequeña: 17px;
+  --max--width: 1600px;
+  --padding: 10px;
+  --padding-grander: 45px;
+  --rojo-hover: #f74c4c;
+  --rojo-oscuro: #d62626;
+  --amarillo-hover: #f3d85e;
+  --amarillo-oscuro: #ddb501;
+  --verde-hover: #11ce50;
+  --verde-oscuro: #0ac438;
+  --font-size-peque: 0.9rem;
+  --font-size-normal: 1rem;
+  --font-size-grande: 1.25rem;
+  --width-input: 420px;
+}
 
 header {
   background-color: var(--azul-principal);
@@ -81,12 +126,6 @@ header {
   display: block;
 }
 
-.sidebar .categ{
-  color: var(--color-blanco);
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-
 .sidebar a:hover {
   color: var(--color-blanco);
   text-decoration: underline;
@@ -107,20 +146,20 @@ main {
   width: var(--cien-porci);
   max-width: var(--max--width);
   margin: 0 auto;
-  margin-top: 80px;
+  margin-top: 20px;
   background: url() no-repeat bottom right;
 }
 
 /* Datos */
 
 .datos {
-    display: flex;
+  display: flex;
   margin-top: 20px;
   gap: 20px;
 }
 .datos__img{
-    width: 100%;
-    height: 0px;
+    width: 750px;
+    height:360px;
 }
 .datos__form {
   display: flex;
@@ -129,9 +168,9 @@ main {
   justify-content: flex-end;
 }
 .form__users {
-  width: 900px;
+  width: 700px;
   display: grid;
-  grid-template-columns: 250px 550px;
+  grid-template-columns: 200px auto;
   gap: 10px;
 }
 .form__buttons{
@@ -225,7 +264,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
 .table__table {
@@ -233,14 +271,15 @@ main {
   border-color: var(--azul-principal);
   background-color: var(--azul-principal);
   margin-top: 30px;
-  width: 1100px;
+  width: 100%;
 }
 .table__body {
   border: 1px solid;
   border-color: var(--azul-principal);
+  padding: 8px;
   text-align: center;
   background-color: var(--color-blanco);
-  height: 53px;
+  margin: auto auto;
 }
 thead{
     height: 30px;
@@ -248,11 +287,6 @@ thead{
 .th{
     background-color: var(--azul-principal);
     color: var(--color-blanco);
-}
-td {
-  display: table-cell;
-  vertical-align: inherit;
-  unicode-bidi: isolate;
 }
 .table--primer {
   width: 180px;
@@ -264,11 +298,8 @@ td {
 .table--segundo {
   width: 300px;
 }
-.table__body .table--last {
-  display: flex;
-  width: 302px;
-  justify-content: center;
-  align-items: center;
+.table--last {
+  width:350px;
 }
 .table__input {
   width: var(--cien-porci);
@@ -305,7 +336,7 @@ td {
 }
 .botones__boton {
   width: 150px;
-  height: 40px;
+  height: 45px;
   color: var(--color-blanco);
   font-size: var(--letra--tamaño--pequeña);
   font-weight: 600;
@@ -341,45 +372,44 @@ td {
 }
 
 .boton{
-    width: 130px;
-    padding: var(--padding);
-    margin-left: 10px;
-    border: none;
-    height: 45px;
+  width: 130px;
+  padding: var(--padding);
+  margin-left: 10px;
+  border: none;
+  height: 45px;
 }
 .modi{
-    background-color: var(--azul-hover);
-    color: var(--color-blanco);
+  background-color: var(--azul-hover);
+  color: var(--color-blanco);
 }
 .modi:hover{
-    background-color: var(--azul-principal);
-    color: var(--color-negro);
+  background-color: var(--azul-principal);
+  color: var(--color-negro);
 }
 .delete{
-    background-color: var(--color-rojo);
-    color: var(--color-blanco);
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
 }
 .delete:hover{
-    background-color: var(--rojo-oscuro);
-    color: var(--color-negro);
+  background-color: var(--rojo-oscuro);
+  color: var(--color-negro);
 }
 .save{
-    background-color: var(--color-verde);
-    color: var(--color-blanco);
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
 }
 .save:hover{
-    background-color: var(--verde-hover);
-    color: var(--color-negro);
+  background-color: var(--verde-hover);
+  color: var(--color-negro);
 }
 .clean{
-    background-color: var(--color-amarillo);
-    color: var(--color-blanco);
+  background-color: var(--color-amarillo);
+  color: var(--color-blanco);
 }
 .clean:hover{
-    background-color: var(--amarillo-hover);
-    color: var(--color-negro);
+  background-color: var(--amarillo-hover);
+  color: var(--color-negro);
 }
-
 /* Info */
 
 .info {

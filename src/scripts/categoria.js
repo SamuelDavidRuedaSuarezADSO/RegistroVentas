@@ -23,7 +23,7 @@ function limpiar(){
     $cod.value = "";
     $nom.value = "";
     $zon.value = "";
-    $search.value = "";
+    $buscarInput.value = "";
 }
 
 function contenido(){
@@ -93,6 +93,8 @@ $cod.addEventListener("keypress", (event)=>{
 $buscarInput.addEventListener("keypress", (event)=>{
     soloNumeros(event, $buscarInput);
 })
+
+
 
 $form.addEventListener("submit", (event)=>{
     let existe = false;

@@ -1,0 +1,52 @@
+@import url(global2.css);
+
+.datos {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  justify-content: end;
+}
+.datos__form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-end;
+}
+.form__users {
+  width: 700px;
+  display: grid;
+  grid-template-columns: 250px auto;
+  gap: 10px;
+}
+.modi{
+  background-color: var(--azul-hover);
+  color: var(--color-blanco);
+}
+.modi:hover{
+  background-color: var(--azul-principal);
+  color: var(--color-blanco);
+}
+.delete{
+  background-color: var(--color-rojo);
+  color: var(--color-blanco);
+}
+.delete:hover{
+  background-color: var(--rojo-oscuro);
+  color: var(--color-blanco);
+}
+.save{
+  background-color: var(--color-verde);
+  color: var(--color-blanco);
+}
+.save:hover{
+  background-color: var(--verde-hover);
+  color: var(--color-blanco);
+}
+.clean{
+  background-color: var(--color-amarillo);
+  color: var(--color-blanco);
+}
+.clean:hover{
+  background-color: var(--amarillo-hover);
+  color: var(--color-blanco);
+}

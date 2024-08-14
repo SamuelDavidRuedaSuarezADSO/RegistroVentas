@@ -16,7 +16,8 @@ const $num = document.querySelector("#clientNum");
 const $email = document.querySelector("#clientEmail");
 const $delte = document.querySelector("#delete");
 const $modi = document.querySelector("#modi");
-const $search = document.querySelector("#input")
+const $search = document.querySelector("#input");
+const $clean = document.querySelector("#clean")
 
 function limpiar(){
   $dni.value = "";
@@ -24,7 +25,12 @@ function limpiar(){
   $last.value = "";
   $num.value = "";
   $email.value = "";
+  $search.value = "";
 }
+
+$clean.addEventListener("click", (event) => {
+  limpiar();
+})
 
 const list = () =>{
     listar(`clientes`)
@@ -199,7 +205,6 @@ $busca.addEventListener("submit", (event)=>{
                 $last.value = x.apellido;
                 $num.value = x.telefono;
                 $email.value = x.email;
-                alert("Se encontro un CLIENTE");
             }})
             .catch((error)=>{
                 console.error("ERROR", error);
