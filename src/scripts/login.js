@@ -63,12 +63,8 @@ $form.addEventListener('submit', (event)=>{
               case "2":
                 location.href = linkHome;
                 break;
-              
-              case "3":
-
-                break;
-            
               default:
+                location.href = linkHome;
                 break;
             }
           }
