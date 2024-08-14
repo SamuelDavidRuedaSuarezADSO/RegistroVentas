@@ -133,6 +133,9 @@ $form.addEventListener("submit", (event)=>{
                     }
                 })
         }
+        else{
+            alert("ERROR: EL email no es Valido");
+        }
     }
     else{
         alert("ERROR: los CAMPOS estan VACIOS");
