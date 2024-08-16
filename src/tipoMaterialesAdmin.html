@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos/categoriaAdmin.css">
+  <link rel="stylesheet" href="estilos/tipoMaterialAdmin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Venta Muebles HomeHouse - Categoria</title>
+  <title>Venta Muebles HomeHouse - Tipo de Materiales</title>
 </head>
 
 <body>
@@ -26,22 +26,21 @@
           </a>
           <a href="home-ventaAdmin.html" class="venta">Venta</a>
           <a href="mueblesAdmin.html">Muebles</a>
-          <a href="#" class="categ">Categoria</a>
+          <a href="categoriaAdmin.html" class="categ">Categoria</a>
           <a href="coloresAdmin.html" class="color">Colores</a>
           <a href="materialesAdmin.html" class="material">Materiales</a>
-          <a href="tipoMaterialesAdmin.html" class="Tmaterial">Tipo de Materiales</a>
+          <a href="#" class="Tmaterial">Tipo de Materiales</a>
           <a href="pedidosAdmin.html">Pedidos</a>
           <a href="clientesAdmin.html" class="client">Clientes</a>
           <a href="usuariosAdmin.html" class="user">Usuarios</a>
-          <a href="roles.html" class="roles">Roles</a>
-        </div>
+          <a href="roles.html" class="client">Roles</a></div>
         <div class="sidebar__last">
           <a href="resgistroAdmin.html">Registrar Usuario</a>
           <a href="../index.html">Cerrar Seción</a>
         </div>
       </div>
       <img src="../assets/Imagenes/Logo.svg" alt="logo" class="home__logo">
-      <h1 class="home__title">CATEGORIAS</h1>
+      <h1 class="home__title">TIPO DE MATERIALES</h1>
     </div>
   </header>
   <main>
@@ -50,17 +49,15 @@
         <!-- <img src="#" alt="" class="datos__img"> -->
       <form action="" class="datos__form" id="form" novalidate>
         <div class="form__users">
-          <label for="codCateg" class="user__label"><b>CODIGO DE LA CATEGORIA:</b></label>
+          <label for="codCateg" class="user__label"><b>CODIGO DEL TIPO:</b></label>
           <input type="text" id="codCateg" name="codCateg" class="user__input" autocomplete="off" required>
-          <label for="nomCateg" class="user__label"><b>NOMBRE DE LA CATEGORIA:</b></label>
+          <label for="nomCateg" class="user__label"><b>NOMBRE DEL TIPO:</b></label>
           <input type="text" id="nomCateg" name="nomCateg" class="user__input" autocomplete="off" required>
-          <label for="zonCateg" class="user__label"><b>ZONA DE LA CATEGORIA:</b></label>
-          <input type="text" id="zonCateg" name="zonCateg" class="user__input" autocomplete="off" required>
           <div class="form__hide"></div>
           <div class="form__buttons">
               <button type="submit" id="guardar" class="boton save"><b>AÑADIR</b></button>
-              <button type="button" id="modi" class="boton modi"><b>MODIFICAR</b></button>
-              <button type="button" id="delete" class="boton delete"><b>ELIMINAR</b></button>
+              <button type="button" id="modi" class="boton modi hidden"><b>MODIFICAR</b></button>
+              <button type="button" id="delete" class="boton delete hidden"><b>ELIMINAR</b></button>
               <button type="button" id="clean" class="boton clean"><b>LIMPIAR</b></button>
           </div>
         </div>
@@ -78,7 +75,6 @@
           <tr class="table__body">
             <th class="table__body th">CODIGO</th>
             <th class="table__body th">NOMBRE</th>
-            <th class="table__body th">ZONA</th>
             <th class="table__body th">MOD.</th>
           </tr>
         </thead>
@@ -92,7 +88,7 @@
     </footer>
   </main>
   <script src="scripts/main.js"></script>
-  <script src="scripts/categoria.js" type="module"></script>
+  <script src="scripts/tipoMateriales.js" type="module"></script>
 </body>
 
 </html>

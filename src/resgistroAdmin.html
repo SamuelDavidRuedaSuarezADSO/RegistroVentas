@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="estilos/registro.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Venta Muebles HomeHouse - registrarse</title>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <img src="../assets/Imagenes/Logo.svg" alt="" class="header__logo" />
+    </div>
+  </header>
+  <main>
+    <section class="register">
+      <h1 class="register__title">Registrate</h1>
+      <form action="#" class="register__form" id="form" novalidate>
+        <div class="register__input-group">
+          <label for="dni" class="register__label">Documento de identidad:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-id-card register__icon id icon3"></i>
+            <input type="text" id="dni" class="register__input" placeholder="Escribe tu documento..." autocomplete="off" required/>
+          </div>
+        </div>
+        <div class="register__input-group">
+          <label for="user" class="register__label">Nombre del Usuario:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-user register__icon icon"></i>
+            <input type="text" name="user" id="user" class="register__input" placeholder="Crea tu nombre de Usuario..." autocomplete="off" required/>
+          </div>
+        </div>
+        <div class="register__input-group">
+          <label for="last" class="register__label">Apellido del Usuario:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-user register__icon icon2"></i>
+            <input type="text" name="last" id="last" class="register__input" placeholder="Crea tu nombre de Usuario..." autocomplete="off" required/>
+          </div>
+        </div>
+        <div class="register__input-group">
+          <label for="contra" class="register__label">Contraseña:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-lock register__icon icon4"></i>
+            <input type="password" id="contra" class="register__input" placeholder="Crea tu contraseña..." autocomplete="off" required/>
+          </div>
+        </div>
+        <div class="register__input-group">
+          <label for="contraC" class="register__label">Repite la Contraseña:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-shield register__icon icon5"></i>
+            <input type="password" id="contraC" class="register__input" placeholder="Repite tu contraseña..." autocomplete="off" required/>
+          </div>
+        </div>
+        <div class="register__input-group roles">
+          <label for="rol" class="register__label">Tipo de rol:</label>
+          <div class="register__input-wrapper">
+            <i class="fa-solid fa-gear register__icon icon6"></i>
+            <select name="rol" id="rol" class="register__input">
+              <option value="pre" selected class="select">Seleccione un rol</option>
+            </select>
+          </div>
+        </div>
+        <div class="register__buttons">
+          <button class="register__button register__button--primary" type="submit">Registrarse</button>
+          <button class="register__button register__button--secondary" id="cancelar" type="button">Cancelar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="scripts/registroAdmin.js" type="module"></script>
+</body>
+
+</html>

@@ -5,8 +5,8 @@
       "name": "admin"
     },
     {
-      "id": "2",
-      "name": "empleado"
+      "name": "empleados",
+      "id": "2"
     }
   ],
   "usuarios": [
@@ -72,6 +72,11 @@
       "id": "2",
       "nombre": "regaderas",
       "zona": "baño"
+    },
+    {
+      "id": "3",
+      "nombre": "sofas",
+      "zona": "sala"
     }
   ],
   "muebles": [
@@ -79,230 +84,87 @@
       "id": "1",
       "nombre": "Cama KingSize",
       "cod_categ": "2",
-      "color": "Blanco",
-      "material": "Roble y Seda",
+      "color": "111",
+      "material": "1",
       "precio": 3000000,
-      "stock": 14
+      "stock": 13
+    },
+    {
+      "nombre": "regaderas Corona",
+      "cod_categ": "2",
+      "color": "000",
+      "material": "3",
+      "precio": "250000",
+      "stock": "20",
+      "id": "2"
+    },
+    {
+      "nombre": "regadera basica",
+      "cod_categ": "2",
+      "color": "111",
+      "material": "3",
+      "precio": "120000",
+      "stock": "15",
+      "id": "3"
+    }
+  ],
+  "Pedidos": [],
+  "colores": [
+    {
+      "id": "111",
+      "nombre": "Blanco"
+    },
+    {
+      "id": "000",
+      "nombre": "Negro"
+    },
+    {
+      "id": "222",
+      "nombre": "Marron"
+    },
+    {
+      "id": "333",
+      "nombre": "Plateado"
+    },
+    {
+      "id": "444",
+      "nombre": "Amarrillo"
+    }
+  ],
+  "materiales": [
+    {
+      "id": "1",
+      "nombre": "Roble",
+      "tipo": "1"
     },
     {
       "id": "2",
-      "nombre": "regaderas Corona",
-      "cod_categ": "2",
-      "color": "plateado",
-      "material": "cilicona",
-      "precio": 250000,
-      "stock": 20
+      "nombre": "Seda",
+      "tipo": "2"
+    },
+    {
+      "id": "3",
+      "nombre": "Cilicona",
+      "tipo": "3"
+    },
+    {
+      "id": "4",
+      "nombre": "Abeto",
+      "tipo": "1"
     }
   ],
-  "Pedidos": [
+  "tipoMaterial": [
     {
       "id": "1",
-      "empleado": "1",
-      "cliente": "1",
-      "contenido": [
-        {
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16,
-          "id": "1"
-        }
-      ],
-      "total": 3000000,
-      "paga": 3500000,
-      "cambio": 500000
+      "nombre": "Madera"
     },
     {
-      "id": "3faf",
-      "empleado": "0987654322",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 3000000,
-      "paga": 3500000,
-      "cambio": 500000
+      "id": "2",
+      "nombre": "Tela"
     },
     {
-      "id": "8e37",
-      "empleado": "1102354168",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 6000000,
-      "paga": 6000000,
-      "cambio": 0
-    },
-    {
-      "id": "a594",
-      "empleado": "1102354168",
-      "cliente": "9898123",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 6000000,
-      "paga": 7000000,
-      "cambio": 1000000
-    },
-    {
-      "id": "3acc",
-      "empleado": "1",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 3000000,
-      "paga": 3000000,
-      "cambio": 0
-    },
-    {
-      "id": "35a3",
-      "empleado": "1102354168",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "2",
-          "nombre": "regadera Corona",
-          "cod_categ": "1",
-          "color": "Plateado",
-          "material": "cilicona",
-          "precio": 300000,
-          "stock": 20
-        }
-      ],
-      "total": 600000,
-      "paga": 600000,
-      "cambio": 0
-    },
-    {
-      "id": "4e35",
-      "empleado": "1",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 6000000,
-      "paga": 6000000,
-      "cambio": 0
-    },
-    {
-      "id": "4754",
-      "empleado": "1102354168",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 6000000,
-      "paga": 6000000,
-      "cambio": 0
-    },
-    {
-      "id": "9051",
-      "empleado": "1",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 6000000,
-      "paga": 6000000,
-      "cambio": 0
-    },
-    {
-      "id": "acf6",
-      "empleado": "1",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 16
-        }
-      ],
-      "total": 3000000,
-      "paga": 3000000,
-      "cambio": 0
-    },
-    {
-      "id": "5985",
-      "empleado": "1",
-      "cliente": "1",
-      "contenido": [
-        {
-          "id": "1",
-          "nombre": "Cama KingSize",
-          "cod_categ": "2",
-          "color": "Blanco",
-          "material": "Roble y Seda",
-          "precio": 3000000,
-          "stock": 15
-        }
-      ],
-      "total": 3000000,
-      "paga": 3000000,
-      "cambio": 0
+      "nombre": "Plasticos",
+      "id": "3"
     }
   ]
 }

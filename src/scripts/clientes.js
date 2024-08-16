@@ -77,8 +77,11 @@ const list = () =>{
                 let dni = x.id;
 
                 drop.addEventListener("click", ()=>{
-                    eliminar(dni, `clientes`)
-                    limpiar();
+                    let confirmar = confirm("¿Esta seguro de eliminar este CLIENTE?");
+                    if(confirmar){
+                        eliminar(dni, `clientes`)
+                        limpiar();
+                    }
                 })
                 
                 tr.appendChild(id);
@@ -179,8 +182,11 @@ $modi.addEventListener("click", (event)=>{
 $delte.addEventListener("click", (event)=>{
     event.preventDefault();
     if($dni.value != "" && $name.value != "" && $last.value != "" && $num.value != "" && $email.value != ""){
-      eliminar($dni.value, `clientes`);
-      limpiar();
+        let confirmar = confirm("¿Esta seguro de eliminar este CLIENTE?");
+        if(confirmar){
+            eliminar($dni.value, `clientes`);
+            limpiar();
+        }
     }
     else{
         alert("ERROR: SELECCIONE UN CLIENTE");

@@ -4,6 +4,12 @@ body{
   font-size: 1.1rem;
 }
 
+.sidebar .pedidos{
+  color: var(--color-blanco);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
 h1 {
     text-align: center;
     color: #333;

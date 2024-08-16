@@ -6,48 +6,65 @@ import requeridos from "../modulos/requiere.js";
 const $form = document.querySelector("#form");
 const $cod = document.querySelector("#codCateg");
 const $nom = document.querySelector("#nomCateg");
-const $zon = document.querySelector("#zonCateg");
 const $table = document.querySelector("#tbody");
 const $modificar = document.querySelector("#modi"); 
 const $delete = document.querySelector("#delete");
 const $buscarInput = document.querySelector("#input");
-const $buscarBoton = document.querySelector("#buscar");
+const $material = document.querySelector("#material");
 const $buscarForm = document.querySelector("#busca");
 
 
 const $frag = document.createDocumentFragment();
+const $fragOption = document.createDocumentFragment();
 
 const $clean = document.querySelector("#clean");
 
 function limpiar(){
     $cod.value = "";
     $nom.value = "";
-    $zon.value = "";
     $buscarInput.value = "";
+    $material.value = "pre";
 }
 
+function tipoCotenido(){
+    listar(`tipoMaterial`)
+        .then((x)=>{
+            x.forEach((d)=>{
+                const option = document.createElement("option");
+                option.setAttribute("value", d.id);
+                option.textContent = d.nombre
+                $fragOption.appendChild(option);
+            })
+            $material.appendChild($fragOption);
+        })
+}
+tipoCotenido();
+
 function contenido(){
-    listar(`categoria`)
+    listar(`materiales`)
     .then((r)=>{
         r.forEach(e => {
             const tr = document.createElement("tr");
             const cod = document.createElement("td");
             const nom = document.createElement("td");
-            const zon = document.createElement("td");
+            const tipe = document.createElement("td");
             const botones = document.createElement("tb");
             const dele = document.createElement("button");
             const modi = document.createElement("button");
     
             cod.textContent = e.id;
             nom.textContent = e.nombre;
-            zon.textContent = e.zona;
+            buscar(e.tipo, `tipoMaterial`)
+                .then((data)=>{
+                    tipe.textContent = data.nombre;
+                })
             dele.textContent = "ELIMINAR";
             modi.textContent = "MODIFICAR";
 
             tr.classList.add("table__body");
             cod.classList.add("table__body");
             nom.classList.add("table__body");
-            zon.classList.add("table__body");
+            tipe.classList.add("table__body");
             botones.classList.add("table__body");
             dele.classList.add("boton");
             modi.classList.add("boton");
@@ -57,28 +74,30 @@ function contenido(){
 
             cod.classList.add("table--primer");
             nom.classList.add("table--name");
-            zon.classList.add("table--segundo");
+            tipe.classList.add("table--segundo");
             botones.classList.add("table--last");
 
             botones.appendChild(dele);
             botones.appendChild(modi);
             tr.appendChild(cod);
             tr.appendChild(nom);
-            tr.appendChild(zon);
+            tr.appendChild(tipe);
             tr.appendChild(botones);
 
             dele.addEventListener("click", (event)=>{
                 event.preventDefault();
-                let confirmar = confirm("¿Esta seguro de eliminar esta CATEGORIA?")
+                let confirmar = confirm("¿Esta seguro de eliminar este MATERIAL?")
                 if(confirmar){
-                    eliminar(cod.textContent, `categoria`);
+                    eliminar(cod.textContent, `materiales`);
+                    limpiar();
+                    alert("COLOR eliminado con exito");
                 }
             })
 
             modi.addEventListener("click",()=>{
                 $cod.value = e.id;
                 $nom.value = e.nombre;
-                $zon.value = e.zona
+                $material.value = e.tipo;
             })
     
             $frag.appendChild(tr);
@@ -98,14 +117,12 @@ $buscarInput.addEventListener("keypress", (event)=>{
     soloNumeros(event, $buscarInput);
 })
 
-
-
 $form.addEventListener("submit", (event)=>{
     event.preventDefault();
     let resp = requeridos(event, "#form [required]");
     if(resp){
         let existe = false;
-        listar(`categoria`)
+        listar(`materiales`)
             .then((x)=>{
                 x.forEach((a)=>{
                     if(a.id == $cod.value){
@@ -113,30 +130,30 @@ $form.addEventListener("submit", (event)=>{
                     }
                 })
                 if(existe){
-                    alert("ERROR: El CODIGO de la CATEGORIA ya esta en uso");
+                    alert("ERROR: El CODIGO del MATERIAL ya esta en uso");
                 }
                 else{
                     const data = {
                         id: $cod.value,
                         nombre: $nom.value,
-                        zona: $zon.value
+                        tipo: $material.value
                     }
-                    registrar(data, `categoria`);
+                    registrar(data, `materiales`);
                     limpiar();
-                    alert("La CATEGORIA fue registrada con exito");
+                    alert("El MATERIAL fue registrado con exito");
                 }
             })     
     }
 });
 
 $modificar.addEventListener("click", ()=>{
-    if($cod.value != "" || $nom.value != "" || $zon.value != ""){
+    if($cod.value != "" || $nom.value != ""){
         const datos ={
             nombre: $nom.value,
-            zona: $zon.value
+            tipo: $material.value
         }
-        modificar($cod.value, datos, `categoria`);
-        alert("La CATEGORIA fue modificada con exito");
+        modificar($cod.value, datos, `materiales`);
+        alert("El MATERIAL fue modificada con exito");
         limpiar();
     }
     else{
@@ -145,11 +162,11 @@ $modificar.addEventListener("click", ()=>{
 })
 
 $delete.addEventListener("click", ()=>{
-    if($cod.value != "" || $nom.value != "" || $zon.value != ""){
-        let confirmar = confirm("¿Esta seguro de eliminar esta CATEGORIA?");
+    if($cod.value != "" || $nom.value != "" || $material.value != "pre"){
+        let confirmar = confirm("¿Esta reguro de eliminar este MATERIAL?")
         if(confirmar){
-            eliminar($cod.value, `categoria`);
-            alert("La CATEGORIA fue eliminada con exito");
+            eliminar($cod.value, `materiales`);
+            alert("El MATERIAL fue eliminada con exito");
             limpiar();
         }
     }
@@ -165,14 +182,14 @@ $clean.addEventListener("click", ()=>{
 $buscarForm.addEventListener("submit", (event)=>{
     event.preventDefault();
     if($buscarInput.value != ""){
-        buscar($buscarInput.value, `categoria`)
+        buscar($buscarInput.value, `materiales`)
             .then((c)=>{
                 $cod.value = c.id;
                 $nom.value = c.nombre;
-                $zon.value = c.zona
+                $material.value = c.tipo
             })
             .catch(()=>{
-                alert("ERROR: CATEGORIA no encontrada");
+                alert("ERROR: MATERIAL no encontrada");
             })
     }
     else{

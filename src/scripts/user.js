@@ -152,9 +152,12 @@ $form.addEventListener("submit", modi);
 
 $elimi.addEventListener("click", () => {
   if ($dni.value != "" || $name.value != "" || $last.value != "" || $contra.value != "") {
-    if ($rol.value != "pre") {      
-      eliminar($dni.value, `usuarios`)
-      limpiar();
+    if ($rol.value != "pre") {   
+      let confirmar = confirm("¿Esta seguro de eliminar este USUARIO?");
+      if(confirmar){
+        eliminar($dni.value, `usuarios`)
+        limpiar();
+      }
     }else {
       alert("ERROR: Seleccione un rol");
     }

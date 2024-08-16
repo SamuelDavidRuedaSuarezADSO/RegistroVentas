@@ -20,13 +20,15 @@ const $clean = document.querySelector("#clean");
 
 const $frag = document.createDocumentFragment();
 const $fragC = document.createDocumentFragment();
+const $fragCl = document.createDocumentFragment();
+const $fragM = document.createDocumentFragment();
 
 function limpiar(){
     $cod.value = "";
     $nomM.value = "";
     $categ.value = "pre";
-    $color.value = "";
-    $mater.value = "";
+    $color.value = "pre";
+    $mater.value = "pre";
     $preci.value = "";
     $stock.value = "";
     $buscarInput.value = "";
@@ -45,6 +47,34 @@ function listarCategoria(){
         })
 }
 listarCategoria();
+
+function listarColor(){
+    listar(`colores`)
+        .then((elements)=>{
+            elements.forEach(e => {
+                const option = document.createElement("option");
+                option.setAttribute("value", e.id);
+                option.textContent = e.nombre;
+                $fragCl.appendChild(option);
+            });
+            $color.appendChild($fragCl);
+        })
+}
+listarColor();
+
+function listarMaterial(){
+    listar(`materiales`)
+    .then((elements)=>{
+        elements.forEach(e => {
+            const option = document.createElement("option");
+            option.setAttribute("value", e.id);
+            option.textContent = e.nombre;
+            $fragM.appendChild(option);
+        });
+        $mater.appendChild($fragM);
+    })
+}
+listarMaterial();
 
 function llenarTabla(){
     listar(`muebles`)
@@ -67,11 +97,15 @@ function llenarTabla(){
                 buscar(e.cod_categ, `categoria`)
                     .then( x => catego.textContent = x.nombre )
                     .catch( error => console.error("ERROR: ", error) )
+                buscar(e.color, `colores`)
+                    .then( x => color.textContent = x.nombre )
+                    .catch( error => console.error("ERROR: ", error) )
+                buscar(e.material, `materiales`)
+                    .then( x => materi.textContent = x.nombre )
+                    .catch( error => console.error("ERROR: ", error) )
                 
                 codigo.textContent = e.id;
                 nombre.textContent = e.nombre;
-                color.textContent = e.color;
-                materi.textContent = e.material;
                 precio.textContent = e.precio;
                 stock.textContent = e.stock;
 
@@ -114,8 +148,8 @@ function llenarTabla(){
                     $cod.value = codigo.textContent;
                     $nomM.value = nombre.textContent;
                     $categ.value = e.cod_categ;
-                    $color.value = color.textContent;
-                    $mater.value = materi.textContent;
+                    $color.value = e.color;
+                    $mater.value = e.material;
                     $preci.value = precio.textContent;
                     $stock.value = stock.textContent;
                 })

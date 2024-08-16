@@ -6,7 +6,6 @@ import requeridos from "../modulos/requiere.js";
 const $form = document.querySelector("#form");
 const $cod = document.querySelector("#codCateg");
 const $nom = document.querySelector("#nomCateg");
-const $zon = document.querySelector("#zonCateg");
 const $table = document.querySelector("#tbody");
 const $modificar = document.querySelector("#modi"); 
 const $delete = document.querySelector("#delete");
@@ -22,32 +21,28 @@ const $clean = document.querySelector("#clean");
 function limpiar(){
     $cod.value = "";
     $nom.value = "";
-    $zon.value = "";
     $buscarInput.value = "";
 }
 
 function contenido(){
-    listar(`categoria`)
+    listar(`roles`)
     .then((r)=>{
         r.forEach(e => {
             const tr = document.createElement("tr");
             const cod = document.createElement("td");
             const nom = document.createElement("td");
-            const zon = document.createElement("td");
             const botones = document.createElement("tb");
             const dele = document.createElement("button");
             const modi = document.createElement("button");
     
             cod.textContent = e.id;
-            nom.textContent = e.nombre;
-            zon.textContent = e.zona;
+            nom.textContent = e.name;
             dele.textContent = "ELIMINAR";
             modi.textContent = "MODIFICAR";
 
             tr.classList.add("table__body");
             cod.classList.add("table__body");
             nom.classList.add("table__body");
-            zon.classList.add("table__body");
             botones.classList.add("table__body");
             dele.classList.add("boton");
             modi.classList.add("boton");
@@ -57,28 +52,27 @@ function contenido(){
 
             cod.classList.add("table--primer");
             nom.classList.add("table--name");
-            zon.classList.add("table--segundo");
             botones.classList.add("table--last");
 
             botones.appendChild(dele);
             botones.appendChild(modi);
             tr.appendChild(cod);
             tr.appendChild(nom);
-            tr.appendChild(zon);
             tr.appendChild(botones);
 
             dele.addEventListener("click", (event)=>{
                 event.preventDefault();
-                let confirmar = confirm("¿Esta seguro de eliminar esta CATEGORIA?")
+                let confirmar = confirm("¿Esta seguro de eliminar este ROL?")
                 if(confirmar){
-                    eliminar(cod.textContent, `categoria`);
+                    eliminar(cod.textContent, `roles`);
+                    limpiar();
+                    alert("ROL eliminado con exito");
                 }
             })
 
             modi.addEventListener("click",()=>{
                 $cod.value = e.id;
-                $nom.value = e.nombre;
-                $zon.value = e.zona
+                $nom.value = e.name;
             })
     
             $frag.appendChild(tr);
@@ -105,7 +99,7 @@ $form.addEventListener("submit", (event)=>{
     let resp = requeridos(event, "#form [required]");
     if(resp){
         let existe = false;
-        listar(`categoria`)
+        listar(`roles`)
             .then((x)=>{
                 x.forEach((a)=>{
                     if(a.id == $cod.value){
@@ -113,30 +107,28 @@ $form.addEventListener("submit", (event)=>{
                     }
                 })
                 if(existe){
-                    alert("ERROR: El CODIGO de la CATEGORIA ya esta en uso");
+                    alert("ERROR: El CODIGO del ROL ya esta en uso");
                 }
                 else{
                     const data = {
                         id: $cod.value,
-                        nombre: $nom.value,
-                        zona: $zon.value
+                        name: $nom.value,
                     }
-                    registrar(data, `categoria`);
+                    registrar(data, `roles`);
                     limpiar();
-                    alert("La CATEGORIA fue registrada con exito");
+                    alert("El ROL fue registrado con exito");
                 }
             })     
     }
 });
 
 $modificar.addEventListener("click", ()=>{
-    if($cod.value != "" || $nom.value != "" || $zon.value != ""){
+    if($cod.value != "" || $nom.value != ""){
         const datos ={
-            nombre: $nom.value,
-            zona: $zon.value
+            name: $nom.value,
         }
-        modificar($cod.value, datos, `categoria`);
-        alert("La CATEGORIA fue modificada con exito");
+        modificar($cod.value, datos, `roles`);
+        alert("El ROL fue modificada con exito");
         limpiar();
     }
     else{
@@ -145,11 +137,11 @@ $modificar.addEventListener("click", ()=>{
 })
 
 $delete.addEventListener("click", ()=>{
-    if($cod.value != "" || $nom.value != "" || $zon.value != ""){
-        let confirmar = confirm("¿Esta seguro de eliminar esta CATEGORIA?");
+    if($cod.value != "" || $nom.value != ""){
+        let confirmar = confirm("¿Esta reguro de eliminar este ROL?")
         if(confirmar){
-            eliminar($cod.value, `categoria`);
-            alert("La CATEGORIA fue eliminada con exito");
+            eliminar($cod.value, `roles`);
+            alert("El ROL fue eliminada con exito");
             limpiar();
         }
     }
@@ -165,14 +157,13 @@ $clean.addEventListener("click", ()=>{
 $buscarForm.addEventListener("submit", (event)=>{
     event.preventDefault();
     if($buscarInput.value != ""){
-        buscar($buscarInput.value, `categoria`)
+        buscar($buscarInput.value, `roles`)
             .then((c)=>{
                 $cod.value = c.id;
-                $nom.value = c.nombre;
-                $zon.value = c.zona
+                $nom.value = c.name;
             })
             .catch(()=>{
-                alert("ERROR: CATEGORIA no encontrada");
+                alert("ERROR: ROL no encontrada");
             })
     }
     else{

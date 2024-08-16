@@ -27,12 +27,16 @@
           <a href="home-ventaAdmin.html" class="venta">Venta</a>
           <a href="#" class="mueble">Muebles</a>
           <a href="categoriaAdmin.html">Categoria</a>
+          <a href="coloresAdmin.html" class="color">Colores</a>
+          <a href="materialesAdmin.html" class="material">Materiales</a>
+          <a href="tipoMaterialesAdmin.html" class="Tmaterial">Tipo de Materiales</a>
           <a href="pedidosAdmin.html">Pedidos</a>
           <a href="clientesAdmin.html" class="client">Clientes</a>
           <a href="usuariosAdmin.html" class="user">Usuarios</a>
+          <a href="roles.html" class="roles">Roles</a>
         </div>
         <div class="sidebar__last">
-          <a href="resgistro.html">Registrar Usuario</a>
+          <a href="resgistroAdmin.html">Registrar Usuario</a>
           <a href="../index.html">Cerrar Seción</a>
         </div>
       </div>
@@ -55,9 +59,13 @@
             <option value="pre" selected disabled>Seleciona una categoria...</option>
           </select>
           <label for="colorMueble" class="user__label"><b>COLOR DEL MUEBLE:</b></label>
-          <input type="text" id="colorMueble" name="colorMueble" class="user__input" autocomplete="off" required>
+          <select id="colorMueble" name="colorMueble" class="user__input">
+            <option value="pre" selected disabled>Seleccione un color...</option>
+          </select>
           <label for="materialMueble" class="user__label"><b>MATERIAL DEL MUEBLE:</b></label>
-          <input type="text" id="materialMueble" name="materialMueble" class="user__input" autocomplete="off" required>
+          <select id="materialMueble" name="materialMueble" class="user__input">
+            <option value="pre" selected disabled>Seleccione un material...</option>
+          </select>
           <label for="precioMueble" class="user__label"><b>PRECIO DEL MUEBLE:</b></label>
           <input type="text" id="precioMueble" name="precioMueble" class="user__input" autocomplete="off" required>
           <label for="stockMueble" class="user__label"><b>STOCK DEL MUEBLE:</b></label>

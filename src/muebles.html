@@ -27,6 +27,9 @@
           <a href="home-venta.html" class="venta">Venta</a>
           <a href="#" class="mueble">Muebles</a>
           <a href="categoria.html">Categoria</a>
+          <a href="colores.html" class="categ">Colores</a>
+          <a href="materiales.html" class="material">Materiales</a>
+          <a href="tipoMateriales.html" class="Tmaterial">Tipo de Materiales</a>
           <a href="pedidos.html">Pedidos</a>
           <a href="clientes.html" class="client">Clientes</a>
         </div>
@@ -54,9 +57,13 @@
             <option value="pre" selected disabled>Seleciona una categoria...</option>
           </select>
           <label for="colorMueble" class="user__label"><b>COLOR DEL MUEBLE:</b></label>
-          <input type="text" id="colorMueble" name="colorMueble" class="user__input" autocomplete="off" required>
+          <select id="colorMueble" name="colorMueble" class="user__input">
+            <option value="pre" selected disabled>Seleccione un color...</option>
+          </select>
           <label for="materialMueble" class="user__label"><b>MATERIAL DEL MUEBLE:</b></label>
-          <input type="text" id="materialMueble" name="materialMueble" class="user__input" autocomplete="off" required>
+          <select id="materialMueble" name="materialMueble" class="user__input">
+            <option value="pre" selected disabled>Seleccione un material...</option>
+          </select>
           <label for="precioMueble" class="user__label"><b>PRECIO DEL MUEBLE:</b></label>
           <input type="text" id="precioMueble" name="precioMueble" class="user__input" autocomplete="off" required>
           <label for="stockMueble" class="user__label"><b>STOCK DEL MUEBLE:</b></label>
