@@ -1,5 +1,7 @@
 import { listar, buscar } from '../modulos/modulo.js';
 
+const $fecha = document.querySelector("#fecha");
+
 document.addEventListener('DOMContentLoaded', async function() {
     const pedidosBody = document.getElementById('pedidos-body');
 
@@ -10,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const row = document.createElement('tr');
           
             const idCell = document.createElement('td');
+            const fecha = document.createElement('td');
             const empleadoCell = document.createElement('td');
             const clienteCell = document.createElement('td');
             const totalCell = document.createElement('td');
@@ -18,6 +21,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const contenidoCell = document.createElement('td');
 
             idCell.textContent = pedido.id;
+            fecha.textContent = pedido.fecha;
             buscar(pedido.empleado, `usuarios`)
               .then((x) => {
                 empleadoCell.textContent = x.nombre + " " + x.apellido;
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             // Añadir celdas a la fila
             row.appendChild(idCell);
+            row.appendChild(fecha);
             row.appendChild(empleadoCell);
             row.appendChild(clienteCell);
             row.appendChild(totalCell);

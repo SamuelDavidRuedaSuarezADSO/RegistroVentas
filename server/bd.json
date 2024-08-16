@@ -87,16 +87,16 @@
       "color": "111",
       "material": "1",
       "precio": 3000000,
-      "stock": 13
+      "stock": 11
     },
     {
+      "id": "2",
       "nombre": "regaderas Corona",
       "cod_categ": "2",
       "color": "000",
       "material": "3",
       "precio": "250000",
-      "stock": "20",
-      "id": "2"
+      "stock": 19
     },
     {
       "nombre": "regadera basica",
@@ -108,7 +108,37 @@
       "id": "3"
     }
   ],
-  "Pedidos": [],
+  "Pedidos": [
+    {
+      "id": "70ac",
+      "fecha": "viernes, 16 de agosto de 2024",
+      "empleado": "1102354168",
+      "cliente": "1",
+      "contenido": [
+        {
+          "id": "1",
+          "nombre": "Cama KingSize",
+          "cod_categ": "2",
+          "color": "111",
+          "material": "1",
+          "precio": 3000000,
+          "stock": 13
+        },
+        {
+          "id": "2",
+          "nombre": "regaderas Corona",
+          "cod_categ": "2",
+          "color": "000",
+          "material": "3",
+          "precio": "250000",
+          "stock": "20"
+        }
+      ],
+      "total": 6250000,
+      "paga": 6250000,
+      "cambio": 0
+    }
+  ],
   "colores": [
     {
       "id": "111",

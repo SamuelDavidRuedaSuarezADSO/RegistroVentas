@@ -32,6 +32,7 @@ const $pagaCon = document.querySelector("#pagaCon");
 const $tablaD = document.querySelector("#tablaD");
 const $fomrDetalls = document.querySelector("#fomrDetalls");
 const $deleteAll = document.querySelector("#deleteAll");
+const $fecha = document.querySelector("#fecha");
 
 function limpiar(){
   $cod.value = "";
@@ -44,7 +45,16 @@ function limpiar(){
   $empleCod.value = "";
   $searchInput.value = "";
 }
-
+function limpiarAña(){
+  $cod.value = "";
+  $nom.value = "";
+  $color.value = "";
+  $categ.value = "";
+  $prec.value = "";
+  $stock.value = "";
+  $cant.value = "0";
+  $searchInput.value = "";
+}
 function empleado(){
     listar(`usuarios`)
         .then((x)=>{
@@ -154,7 +164,10 @@ $form.addEventListener("submit", (event)=>{
 
         cod.textContent = $cod.value;
         nom.textContent = $nom.value;
-        col.textContent = $color.value;
+        buscar($color.value, `colores`)
+          .then((x)=>{
+            col.textContent = x.id + " " + x.nombre;
+          })
         cad.textContent = cantidad;
         vaU.textContent = precio; 
         vaT.textContent = precio * cantidad;
@@ -193,6 +206,7 @@ $form.addEventListener("submit", (event)=>{
         $frag2.appendChild(tr);
         $table.appendChild($frag2);
         
+        limpiarAña();
         
         let tb = $table.children;
         let precioT = 0;
@@ -352,6 +366,7 @@ $fomrDetalls.addEventListener("submit", async (event) => {
           const codCli = $cliente.value.match(/^\d+/)[0];
 
           const newPedido = {
+            fecha: $fecha.textContent,
             empleado: codEmp,
             cliente: codCli,
             contenido: muebleData,
