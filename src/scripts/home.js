@@ -212,7 +212,7 @@ $form.addEventListener("submit", (event)=>{
         $open.addEventListener('click', () => {
           $modal.style.display = 'block';
           let tb2 = $table.children;
-          for(let r = 0; r < tb2.length; r++){
+          for (let r = 0; r < tb2.length; r++) {
             let son = tb2[r].children;
             const trD = document.createElement("tr");
             trD.classList.add("table__body");
@@ -268,6 +268,9 @@ $form.addEventListener("submit", (event)=>{
             $total.textContent = "";
           }
         });
+
+
+
       }
       else{
         alert("ERROR: No hay STOCK disponible");
@@ -304,6 +307,8 @@ $fomrDetalls.addEventListener("submit", async (event) => {
           const promises = Array.from(tb3).map(async row => {
             let son3 = row.children;
             let mueble = son3[0].textContent;
+            let cantString = son3[2].textContent;
+            let cant = parseInt(cantString);
 
             let d = await buscar(mueble, 'muebles');
             let id = d.id;
@@ -313,6 +318,7 @@ $fomrDetalls.addEventListener("submit", async (event) => {
             let material = d.material;
             let precio = d.precio;
             let stock = d.stock;
+            let newStock = d.stock - cant;
 
             muebleData.push({
               id,
@@ -323,6 +329,19 @@ $fomrDetalls.addEventListener("submit", async (event) => {
               precio,
               stock
             });
+
+            const updatedData = {
+              id,
+              nombre,
+              cod_categ,
+              color,
+              material,
+              precio,
+              stock: newStock
+            };
+
+            await modificar(id, updatedData, 'muebles');
+
           });
 
           await Promise.all(promises);
